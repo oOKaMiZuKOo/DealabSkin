@@ -10,7 +10,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 28/10/2016 - Version beta 0.26
+ *    Dernière MAJ : 29/10/2016 - Version beta 0.27
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/forums/le-site/annonces--nouveauts-du-site-modifications/theme-dealabs-dealabskin-by-ookamizukoo/26018
  *
@@ -21,6 +21,15 @@
  *    ==========================================================================================
  *
  *    Historique :
+ *
+ * 
+ *      beta 0.27 - 29/10/2016 : 
+ *      ----------------------------------------
+ *                             Objet : bug d'affichage d'un smiley (":p") sur forum corrigé
+ *                             
+ *                             Réalisation de :
+ *                                      - gestion d'une exception, rajout de "img.bbcode_smiley[alt=":p"]" (il existe sur le forum des ":P" [grand P] et des ":p" [petit  p])
+ *                                      - coloration (manquante) de la case du champs connection utlisateur (notification) lorsque pas de notification en instance
  *
  *      beta 0.2 et 0.26 - 28/10/2016 : 
  *      ----------------------------------------
@@ -81,8 +90,8 @@
     
     
   /* Mise en avant de la section connection / login de l'utilisateur */   
-  div#login_conteneur_right_connected a.other_right_header_contener, div#login_conteneur_right_connected div.float_right a.mp, a#pseudo_right_header_contener {background-color:#017387 !important } 
-  div#login_conteneur_right_connected a.other_right_header_contener:hover, div#login_conteneur_right_connected div.float_right a.mp:hover, a#pseudo_right_header_contener:hover {background-color:#000000 !important }
+  div#login_conteneur_right_connected a.other_right_header_contener, div#login_conteneur_right_connected div.float_right a.mp, a#pseudo_right_header_contener, div#login_conteneur_right_connected div.float_right a.notif {background-color:#017387 !important } 
+  div#login_conteneur_right_connected a.other_right_header_contener:hover, div#login_conteneur_right_connected div.float_right a.mp:hover, a#pseudo_right_header_contener:hover, div#login_conteneur_right_connected div.float_right a.notif:hover {background-color:#000000 !important }
     
   /* coloration lors d'un mp ou alerte */ 
   div#login_conteneur_right_connected a.notif_right_header_contener {background-color:#60B35C !important }  
@@ -260,7 +269,7 @@
     a[alt="-_-'"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/6wnsaz6lj/you_re_kidding_right.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px} 
     
     
-    img.bbcode_smiley[alt=":P"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat; background-size: 32px 32px !important;}
+    img.bbcode_smiley[alt=":P"], img.bbcode_smiley[alt=":p"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat; background-size: 32px 32px !important;}
    a[alt=":P"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
     
     img.bbcode_smiley[alt="xS"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s15.postimg.org/n3lj58ttn/dizzy.png) no-repeat; background-size: 32px 32px !important;}
