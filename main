@@ -10,7 +10,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 29/10/2016 - Version beta 0.27
+ *    Dernière MAJ : 30/10/2016 - Version beta 0.28
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/forums/le-site/annonces--nouveauts-du-site-modifications/theme-dealabs-dealabskin-by-ookamizukoo/26018
  *
@@ -22,6 +22,18 @@
  *
  *    Historique :
  *
+ * 
+ * 
+ *      beta 0.28 - 30/10/2016 : 
+ *      ----------------------------------------
+ *                             Objet : bug du menu lors d'une notification qui n'est pas mise en avant
+ *                             
+ *                             Réalisation de :
+ *                                      - bug corrigé lors de la mise en avant d'une nouvelle notification (suite à modification en 0.26)
+ *                                      - modification du voucher code (vert -> orange)
+ *                                      - modification de la couleur de l'encadré (rouge foncé -> rouge plus clair)
+ *                                      - modification des couleurs lors du passage de la souris (survol, lien actif)
+ *                                      - modification des couleurs du menu d'identification utilisateur (survol, lien actif)
  * 
  *      beta 0.27 - 29/10/2016 : 
  *      ----------------------------------------
@@ -80,8 +92,6 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
 
-@-moz-document domain("dealabs.com")
-  {
   /* harmonisation du menu avec la couleur du "gris sombre" du logo dealabs */
   header {background-color:#333333 ;}
   
@@ -90,27 +100,46 @@
     
     
   /* Mise en avant de la section connection / login de l'utilisateur */   
-  div#login_conteneur_right_connected a.other_right_header_contener, div#login_conteneur_right_connected div.float_right a.mp, a#pseudo_right_header_contener, div#login_conteneur_right_connected div.float_right a.notif {background-color:#017387 !important } 
-  div#login_conteneur_right_connected a.other_right_header_contener:hover, div#login_conteneur_right_connected div.float_right a.mp:hover, a#pseudo_right_header_contener:hover, div#login_conteneur_right_connected div.float_right a.notif:hover {background-color:#000000 !important }
+  div#login_conteneur_right_connected a, div#login_conteneur_right_connected .float_right a.empty {background-color:#017387 !important; border:1px solid #017387 !important; } 
+  div#login_conteneur_right_connected a:hover,div#login_conteneur_right_connected .float_right a:hover {background-color:#014956 !important }
     
   /* coloration lors d'un mp ou alerte */ 
   div#login_conteneur_right_connected a.notif_right_header_contener {background-color:#60B35C !important }  
+    
+  /* Mise en surbrillance du lien actif de la page (situation dans le menu) */ 
+  div#header_black div#type_header_conteneur_left a.active {color:#fff; background-color:#02A5C1; border-radius: 0px 0px 8px 8px; border-top:3px solid #FFF !important;}
   
+
+
+  /* Changement de couleur lors du passage de la souri sur un lien du menu */
+  div#type_header_conteneur_left a:hover,div#type_header_conteneur_left div#plus_button_popup:hover,div#type_header_conteneur_left div#type_button_popup:hover {background-color:#014956 !important; color:#FFF !important; border-radius: 0px 0px 0px 0px; border-top:3px solid #02A5C1}
+    
   /* Arrondis de la section connection / login de l'utilisateur */ 
   div#login_conteneur_right_connected a.deconnection {border-radius: 0px 15px 15px 0px;}
   div#login_conteneur_right_connected a#pseudo_right_header_contener {border-radius: 15px 0px 0px 15px; padding-left: 12px}
   div#login_conteneur_right_connected a#pseudo_right_header_contener img {border-radius: 8px 8px 0px 0px; }  
     
   /* coloration fond code de réduction */
-  div.voucher_code_title {background-color:#c2e6c0 !important; color:#afeaad !important;}
-  div.voucher_code_title p {color:#447E41 !important;}  
+  
+  input.voucher_code {border:1px solid #fee5c0 !important;}
+  div.voucher_code_title {background-color:#fcf7ef !important; color:#afeaad !important; border:1px solid #fee5c0 !important;}
+  div.voucher_code_title p, input.voucher_code {color:#e88c02 !important;}  
     
   /* coloration fond case taux réduction */  
-  .price_border {background:#fffafa; border:1px solid #fd8f8f !important;}
+  .price_border {background:#fffafa; border:1px solid #ffaeae !important;}
        
-  /* Mise en surbrillance du lien actif de la page (situation dans le menu) */ 
-  div#header_black div#type_header_conteneur_left a.active {color:#fff; background-color:#02A5C1}
-  
+
+    
+  /* Changement effet deal expiré */
+    
+  article.expired .contener_liste_deal_index {
+   
+   background: url(
+    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAF0lEQVQYlWNgIAKYm5unjSqipyIGBgYAWWcKb8z54mIAAAAASUVORK5CYII=
+        ) repeat !important;;
+    
+    }
+    
   /* Marquer comme lu tous les threads du forum */ 
   div#contener_search_part  a.tout_marquer_comme_lu {color:#fff; background-color:#8276b8;}
   div#contener_search_part  a.tout_marquer_comme_lu:hover {color:#000; background-color:#72689E;}
@@ -149,9 +178,9 @@
   .sub_categorie_contener:nth-child(odd) {background: #F8F8F8;} 
   .sub_categorie_contener:nth-child(even) {background: #FFF;}
   
-  /* Couleur pour la mention du forum "RESOLU" */  
-  .title_thread_contener:nth-child(odd) div.title a span.resolu,.title_thread_contener:nth-child(even) div.title a span.resolu {background: #60B35C;}
-  div#title_contener span.expire {background: #60B35C !important;}
+  /* Couleur pour la mention du forum "RESOLU" + Deal "Expiré" */  
+  .title_thread_contener:nth-child(odd) div.title a span.resolu,.title_thread_contener:nth-child(even) div.title a span.resolu {background: #60B35C;border: 1px #23861e !important}
+  div#title_contener span.expire{background: #60B35C !important; }
     
   /* alternance de couleurs de la section des threads du forum */   
   .title_thread_contener:nth-child(odd) {background: #F8F8F8;}
@@ -269,7 +298,7 @@
     a[alt="-_-'"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/6wnsaz6lj/you_re_kidding_right.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px} 
     
     
-    img.bbcode_smiley[alt=":P"], img.bbcode_smiley[alt=":p"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat; background-size: 32px 32px !important;}
+   img.bbcode_smiley[alt=":P"], img.bbcode_smiley[alt=":p"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat; background-size: 32px 32px !important;}
    a[alt=":P"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
     
     img.bbcode_smiley[alt="xS"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s15.postimg.org/n3lj58ttn/dizzy.png) no-repeat; background-size: 32px 32px !important;}
@@ -302,4 +331,3 @@
   footer#footer_html div#footer_events {background:#333333}
 
   
-}
