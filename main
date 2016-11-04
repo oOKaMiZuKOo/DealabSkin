@@ -10,7 +10,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 31/10/2016 - Version beta 0.29
+ *    Dernière MAJ : 04/11/2016 - Version beta 0.30
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/forums/le-site/annonces--nouveauts-du-site-modifications/theme-dealabs-dealabskin-by-ookamizukoo/26018
  *
@@ -22,7 +22,18 @@
  *
  *    Historique :
  *
- * 
+ *      beta 0.30 - 04/11/2016 :
+ *      ----------------------------------------
+ *                             Objet : Améliorations diverses
+ *
+ *                             Réalisation de :
+ *                                     - alternance de couleurs des topics de la section forum
+ *                                     - création et redéfinition du smiley ":|", "xS", ":("
+ *                                     - réalignement (et augmentation de la taille pour harmonisation de taille plus petite) des smileys
+ *                                     - modification de l'interface de la boite mail (alternance de couleurs des messages + fond bleu au déclenchement du :hover)
+ *                                     - diverses optimisations visuelles des photos d'avatar
+ *                                     - modifications visuelles section ajout commentaires
+ *                                     - affinage divers (trop de petits trucs dsl... )
  * 
  *      beta 0.29 - 31/10/2016 : 
  *      ----------------------------------------
@@ -110,7 +121,7 @@
     
     
   /* Mise en avant de la section connection / login de l'utilisateur */   
-  div#login_conteneur_right_connected a, div#login_conteneur_right_connected .float_right a.empty {background-color:#017387 !important; border:1px solid #017387 !important; } 
+  div#login_conteneur_right_connected a, div#login_conteneur_right_connected .float_right a.empty {background-color:#017387 !important;  } 
   div#login_conteneur_right_connected a:hover,div#login_conteneur_right_connected .float_right a:hover {background-color:#014956 !important }
     
   /* coloration lors d'un mp ou alerte */ 
@@ -120,7 +131,7 @@
   div#header_black div#type_header_conteneur_left a.active {color:#fff; background-color:#02A5C1; border-radius: 0px 0px 8px 8px; border-top:3px solid #FFF !important;}
   
   /* Changement de couleur lors du passage de la souri sur un lien du menu */
-  div#type_header_conteneur_left a:hover,div#type_header_conteneur_left div#plus_button_popup:hover,div#type_header_conteneur_left div#type_button_popup:hover {background-color:#014956 !important; color:#FFF !important; border-radius: 0px 0px 0px 0px; border-top:3px solid #02A5C1}
+  div#type_header_conteneur_left a:hover,div#type_header_conteneur_left div#plus_button_popup:hover,div#type_header_conteneur_left div#type_button_popup:hover {background-color:#014956 !important; color:#FFF !important; border-top:3px solid #02A5C1}
     
   div.block_notif_contener a#commentaires.part_notif, div.block_notif_contener a#alertes.part_notif {background-color:#FFFFFF !important; color: #777777 !important; border:0px !important;}
   div.block_notif_contener a#commentaires.part_notif.active, div.block_notif_contener a#alertes.part_notif.active {background-color:#FFFFFF !important;border-bottom: 3px solid #02A5C1 !important; color:#43BCD1 !important;}
@@ -192,9 +203,9 @@
   /* Arrondi supérieur des popup de signalement deals/commentaires du forum */ 
   div.popup_center_signalement  {border-radius: 15px 15px 0px 0px;} 
     
-  /* alternance de couleurs de la section categories du forum */   
-  .sub_categorie_contener:nth-child(odd) {background: #F8F8F8;} 
-  .sub_categorie_contener:nth-child(even) {background: #FFF;}
+  /* alternance de couleurs de la section categories du forum & forum */   
+  .sub_categorie_contener:nth-child(odd), div#body .title_thread_contener:nth-child(odd) {background: #F8F8F8;} 
+  .sub_categorie_contener:nth-child(even), div#body .title_thread_contener:nth-child(even) {background: #FFF;}
     
   .timeline_content_contener:nth-child(odd) {background: #F8F8F8;} 
   .timeline_content_contener:nth-child(even) {background: #FFF;}
@@ -217,7 +228,7 @@
   div#comment_contener .padding_comment_contener:nth-child(odd) {background: #F8F8F8; }  
   
   /* couleur date des deals */
-  .padding_part_contener p.dates_deal b:nth-child(1)  {color:#208E4F !important; font-size: 0.86em; } /* posté le */
+  .padding_part_contener p.dates_deal b:nth-child(1) {color:#208E4F !important; font-size: 0.86em; } /* posté le */
   .padding_part_contener p.dates_deal b:nth-child(2) {color:#CC3636 !important; font-size: 0.86em; } /* Rendu hot */   
   .padding_part_contener p.dates_deal b:nth-child(3) {color:#E67E22 !important; font-size: 0.86em; } /* modifié le */
     
@@ -251,6 +262,39 @@
   div#comment_contener .padding_comment_contener .commentaire_div .quote span.text_color_333333 {color:#65C9DA !important; }    
   div#comment_contener .padding_comment_contener .commentaire_div .quote p.pseudo_tag span:nth-child(2) {font-style: italic !important; font-size: 0.9em }   
   
+  /* boite de messagerie */
+  .full_width_messagerie_div .avatar_part img.image_message {border-radius: 8px 8px 0px 0px; -webkit-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); -moz-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); margin:0.6em !important;  border: 0.1em solid #FFF; margin-top:0px !important; margin-left:5px !important;  } 
+  
+   .full_width_messagerie_div:nth-child(even) .left_select_message, .full_width_messagerie_div:nth-child(even) .content_select_message  {background: #F8F8F8 !important;}
+   .full_width_messagerie_div:nth-child(odd) .left_select_message, .full_width_messagerie_div:nth-child(odd) .content_select_message  {background: #FFF !important;}
+   
+   .full_width_messagerie_div:nth-child(even):hover .left_select_message, .full_width_messagerie_div:nth-child(even):hover .content_select_message, .full_width_messagerie_div:nth-child(odd):hover .left_select_message, .full_width_messagerie_div:nth-child(odd):hover .content_select_message  {background: #F7FDFF !important;}
+    
+   .full_width_messagerie_div:hover .menu_message.non_lu .left_select_message, .full_width_messagerie_div:hover .menu_message.non_lu .content_select_message {background: #FCDCD9 !important;} 
+   .full_width_messagerie_div .menu_message.non_lu .left_select_message, .full_width_messagerie_div .menu_message.non_lu .content_select_message {background: #FCF0EF !important;} 
+   
+    
+  /* avatar de profil */
+  #left_profil .left_image_profil img {border-radius: 8px 8px 0px 0px; -webkit-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); -moz-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); margin:0.6em !important;  border: 0.2em solid #FFF; margin-left:5px !important;  } 
+    
+  .structure .title_thread_contener .right_cat_part .img_bloc img, .body_forum_sub .sub_categorie_contener .right_cat_part .img_bloc img {border-radius: 8px 8px 0px 0px; -webkit-box-shadow: 0px 0px 0.05em 0em rgba(0,0,0,0.66); -moz-box-shadow: 0px 0px 0.05em 0em rgba(0,0,0,0.66); box-shadow: 0px 0px 0.05em 0em rgba(0,0,0,0.66); margin:0.6em !important; padding-bottom:0 !important; padding-top:0 !important;  border: 0.05em solid #FFF;   }  
+  
+  /* decalage image poster de commentaire dans liste msg catégories forum et sous forum */
+  .sub_categorie_contener .right_cat_part .img_bloc, .title_thread_contener .right_cat_part .img_bloc {margin-right:0px !important;}  
+  .sub_categorie_contener .right_cat_part, .title_thread_contener .right_cat_part {margin-right:0px !important;} 
+    
+  /* photo profil perso section bandeau haut cadre login */
+  #pseudo_right_header_contener img {border-radius: 8px 8px 0px 0px !important;  }
+    
+  /* photo profil membre topic / photo profil membre cadre réponse au topic / photo profil membre réponse topic / photo profil réponses messagerie   */
+  div.poster_profil_div a.open_profil img, div.profil_image_part a.open_profil img, #add_comment_contener .profil_image_part img, .profil_message .image_profil img {border-radius: 8px 8px 0px 0px; -webkit-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); -moz-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); border: 0.1em solid #FFF;  }
+   
+  /* photo profil membre uploadé */
+  .content_profil_param_champs #profile_image {border-radius: 8px 8px 0px 0px; border: 0.1em solid #80C27D;  } 
+    
+  /* photo article */
+  .deal_index_article .contener_liste_deal_index .image_div_deal_index .image_contener a  {-webkit-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); -moz-box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); box-shadow: 0px 0px 0.1em 0em rgba(0,0,0,0.66); margin-left:-0.02em !important; border: 0.15em solid #FFF;   }
+
     
   /* couleur des liens */
   a.link_a_reduce {color:#3F7AB6 !important; font-size: 0.9em; font-weight: bold;}
@@ -260,9 +304,12 @@
   div#comment_contener .padding_comment_contener .commentaire_div .quote div.quote_message img.BBcode_image {max-width:100px !important;}
  
   /* ombre sur les images des posts/topic */
-  img.BBcode_image {-webkit-box-shadow: 0px 0px 0.1em 0.1em rgba(0,0,0,0.66); -moz-box-shadow: 0px 0px 0.1em 0.1em rgba(0,0,0,0.66); box-shadow: 0px 0px 0.1em 0.1em rgba(0,0,0,0.66); margin:0.6em !important; margin-bottom:0.7em !important; border: 0.2em solid #FFF;   }
+  img.BBcode_image {-webkit-box-shadow: 0px 0px 0.2em 0em rgba(0,0,0,0.66); -moz-box-shadow: 0px 0px 0.2em 0em rgba(0,0,0,0.66); box-shadow: 0px 0px 0.2em 0em rgba(0,0,0,0.66); margin:0.6em !important; margin-bottom:0.7em !important; border: 0.2em solid #FFF;   }
 
-  
+  /* bandeau précédant ajout commentaire et section ajout commentaire */
+  #header_add_commentaire_contener {background: #02A5C1; }
+  #discussed, #add_comment_contener {border-radius: 0px 0px 15px 15px !important;}
+  textarea#add_comment:focus {border:1px solid #02A5C1 !important; }
     
   /* Modification (et remplacement) des emoticons natifs du site (toutes sections) 
    * -> Modification graphique perso (car non existants) des émoticones afin de correspondre au mieux au originaux du site [ ":P" , "B)", ":D", ":|", ";)" ]
@@ -273,62 +320,62 @@
     .bbcode_smiley {cursor:default !important; vertical-align: -10px;  }
     
     img.bbcode_smiley[alt=":)"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/43pzd7gvb/have_a_nice_day.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":)"] img  { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/43pzd7gvb/have_a_nice_day.png) no-repeat !important; background-size:24px 24px !important; margin-top:-6px}
+    a[alt=":)"] img  { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/43pzd7gvb/have_a_nice_day.png) no-repeat !important; background-size:24px 24px !important; margin-top:-4px}
    
     img.bbcode_smiley[alt=";)"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s22.postimg.org/d6c96p8ht/clinoeil.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=";)"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s22.postimg.org/d6c96p8ht/clinoeil.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
+    a[alt=";)"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s22.postimg.org/d6c96p8ht/clinoeil.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px}
     
-    img.bbcode_smiley[alt=":("] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/ysth19f6v/are_you_for_real.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":("] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/ysth19f6v/are_you_for_real.png) no-repeat !important; background-size:24px 24px !important; margin-top:-6px}
+    img.bbcode_smiley[alt=":("] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 34px; height: 34px; padding-left: 34px; background: url(http://s14.postimg.org/k4fmvsuap/are_you_for_real.png) no-repeat; background-size: 34px 34px !important;}
+    a[alt=":("] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 26px; height: 26px; padding-left: 26px; background: url(http://s14.postimg.org/k4fmvsuap/are_you_for_real.png) no-repeat !important; background-size:26px 26px !important; margin-top:-6px}
 
     img.bbcode_smiley[alt=":D"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s18.postimg.org/b6j8vv455/happy_smile.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":D"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s18.postimg.org/b6j8vv455/happy_smile.png) no-repeat !important; background-size:24px 24px !important; margin-top:-6px}
+    a[alt=":D"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s18.postimg.org/b6j8vv455/happy_smile.png) no-repeat !important; background-size:24px 24px !important; margin-top:-4px}
     
     
     img.bbcode_smiley[alt=":S"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/f8exyhelj/sick.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":S"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/f8exyhelj/sick.png) no-repeat !important; background-size:24px 24px !important; margin-top:-6px}    
+    a[alt=":S"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/f8exyhelj/sick.png) no-repeat !important; background-size:24px 24px !important; margin-top:-4px}    
   
     img.bbcode_smiley[alt="^^"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/ag54n1jxj/grin.png) no-repeat; background-size: 32px 32px !important;}
-   a[alt="^^"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/ag54n1jxj/grin.png) no-repeat !important; background-size:24px 24px !important; margin-top:-6px} 
+   a[alt="^^"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/ag54n1jxj/grin.png) no-repeat !important; background-size:24px 24px !important; margin-top:-4px} 
     
 
     
     img.bbcode_smiley[alt="xD"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/nhveqmxpj/image.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt="xD"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/nhveqmxpj/image.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}    
+    a[alt="xD"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/nhveqmxpj/image.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px}    
     
     img.bbcode_smiley[alt=":o"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/kxzrwja5j/slow.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":o"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/kxzrwja5j/slow.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
+    a[alt=":o"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/kxzrwja5j/slow.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px}
     
     img.bbcode_smiley[alt=":'("] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/9mx4863af/TT_TT.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":'("] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/9mx4863af/TT_TT.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
+    a[alt=":'("] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/9mx4863af/TT_TT.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px}
     
-    img.bbcode_smiley[alt="B)"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/5idjncfpz/confident.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt="B)"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/5idjncfpz/confident.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
+    img.bbcode_smiley[alt="B)"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 34px; height: 34px; padding-left: 34px; background: url(http://s13.postimg.org/5idjncfpz/confident.png) no-repeat; background-size: 34px 34px !important;}
+    a[alt="B)"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 26px; height: 26px; padding-left: 26px; background: url(http://s13.postimg.org/5idjncfpz/confident.png) no-repeat !important; background-size: 26px 26px !important; margin-top:-6px}
     
     img.bbcode_smiley[alt="|o"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/9horkr6lj/pissed_off.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt="|o"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/9horkr6lj/pissed_off.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
+    a[alt="|o"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/9horkr6lj/pissed_off.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px}
 
     img.bbcode_smiley[alt=":3"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/hyo9vobaf/in_love.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":3"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/hyo9vobaf/in_love.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}   
+    a[alt=":3"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/hyo9vobaf/in_love.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px}   
 
     img.bbcode_smiley[alt="':)"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/w1a7ango7/evilish.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt="':)"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/w1a7ango7/evilish.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px} 
+    a[alt="':)"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/w1a7ango7/evilish.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px} 
 
     img.bbcode_smiley[alt="|D"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/we66ukobr/yarr.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt="|D"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/we66ukobr/yarr.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px} 
+    a[alt="|D"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/we66ukobr/yarr.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px} 
     
     img.bbcode_smiley[alt="-_-'"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s13.postimg.org/6wnsaz6lj/you_re_kidding_right.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt="-_-'"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/6wnsaz6lj/you_re_kidding_right.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px} 
+    a[alt="-_-'"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s13.postimg.org/6wnsaz6lj/you_re_kidding_right.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px} 
     
     
-   img.bbcode_smiley[alt=":P"], img.bbcode_smiley[alt=":p"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat; background-size: 32px 32px !important;}
-   a[alt=":P"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px}
+   img.bbcode_smiley[alt=":P"], img.bbcode_smiley[alt=":p"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 34px; height: 34px; padding-left: 34px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat; background-size: 34px 34px !important;}
+   a[alt=":P"] img   { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 26px; height: 26px; padding-left: 26px; background: url(http://s9.postimg.org/siwp0agvz/brzzzzz.png) no-repeat !important; background-size: 26px 26px !important; margin-top:-6px}
     
-    img.bbcode_smiley[alt="xS"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s15.postimg.org/n3lj58ttn/dizzy.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt="xS"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s15.postimg.org/n3lj58ttn/dizzy.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px} 
+    img.bbcode_smiley[alt="xS"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s11.postimg.org/cy3aqx9zn/dizzy.png) no-repeat; background-size: 32px 32px !important;}
+    a[alt="xS"] img { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s11.postimg.org/cy3aqx9zn/dizzy.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px} 
 
-    img.bbcode_smiley[alt=":|"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s21.postimg.org/hkzj1fpg7/shhh.png) no-repeat; background-size: 32px 32px !important;}
-    a[alt=":|"] img  { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s21.postimg.org/hkzj1fpg7/shhh.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-6px} 
+    img.bbcode_smiley[alt=":|"] { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 32px; height: 32px; padding-left: 32px; background: url(http://s12.postimg.org/d5g6thk9p/mute2.png) no-repeat; background-size: 32px 32px !important;}
+    a[alt=":|"] img  { display: block; -moz-box-sizing: border-box; box-sizing: border-box; width: 24px; height: 24px; padding-left: 24px; background: url(http://s12.postimg.org/d5g6thk9p/mute2.png) no-repeat !important; background-size: 24px 24px !important; margin-top:-4px} 
     
     
     
@@ -342,15 +389,13 @@
   div#comment_contener .padding_comment_contener:nth-child(even) a.open_profil img {background:#F8F8F8; border-radius: 8px 8px 0px 0px; } 
   div#comment_contener .padding_comment_contener:nth-child(odd) a.open_profil img {background:#FFFFFF; border-radius: 8px 8px 0px 0px; } 
   
-  /* photo profil membre topic */
-  div.poster_profil_div a.open_profil img {background:#FFFFFF; border-radius: 8px 8px 0px 0px; }
-    
-  /* photo profil membre cadre réponse au topic */
-  div.profil_image_part img {background:#FFFFFF; border-radius: 8px 8px 0px 0px; }
+
     
   /* couleurs footer bandeau */
   footer#footer_html div#footer_social {background:#02849B}
 
+    .newsletter_part p.info {color:#333333 !important;}
+    
   footer#footer_html div#footer_events {background:#333333}
 
   
