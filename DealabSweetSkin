@@ -1,0 +1,450 @@
+/***
+ *
+ * ______           _       _     _____                   _   _____ _    _       
+ * |  _  \         | |     | |   /  ___|                 | | /  ___| |  (_)      
+ * | | | |___  __ _| | __ _| |__ \ `--.__      _____  ___| |_\ `--.| | ___ _ __  
+ * | | | / _ \/ _` | |/ _` | '_ \ `--. \ \ /\ / / _ \/ _ \ __|`--. \ |/ / | '_ \ 
+ * | |/ /  __/ (_| | | (_| | |_) /\__/ /\ V  V /  __/  __/ |_/\__/ /   <| | | | |
+ * |___/ \___|\__,_|_|\__,_|_.__/\____/  \_/\_/ \___|\___|\__\____/|_|\_\_|_| |_|
+ *                                                                               
+ *                                                                               
+ *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
+ *                                                                 
+ *                                                                                         
+ *    Dernière MAJ : 25/07/2018 - [Theme du site Dealabs] DealabSweetSkin Version 0.1
+ *    
+ *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
+ *
+ *    N'hésitez pas à me remonter les bugs, ou toute autre remarques sur le topic dédié.
+ *    Les demandes d'évolutions seront fonction de mes disponibilités. 
+ *    
+ * 
+ *    Bonne utilisation, j'espère que ce skin vous plaira (^.^) 
+ *    ==========================================================================================
+ *
+ *    Historique :
+ *
+ *      0.1 - 25/07/2017 :
+ *      ----------------------------------------
+ *                             Objet : Adaptation de l'interface "nouvelle" de Delabds (depuis DealabSkin) 
+ *
+ *                             Réalisation de :
+ *                                      - Définition des couleurs
+ *                                      - Création du fichier css de zéro
+ *                                      - Pages deals, commentaires, profil modifiées(activité et badges)
+ *                                      	> Boutons, liens, bandeaux, pages
+ * 											> Ajout de variantes de polices (font): Roboto / Caveat / Josefin Slab
+ *                                      	> Refonte des balises de citations et de "spoilers" (alertes mainpage dealabs)
+ *                                      	> Parcours des pages et corrections pour adaptation au skin au fur et à mesure
+ *											> Elargissement pour plein écran par suppression des marges gauches et droites
+ * 											> Modification des liens précédés d'une icon "link" dans les discussions
+ * 
+ * GLOSSAIRE Couleurs :
+ * ====================
+ * 	Rouge foncé	: rgba(224, 0, 52,1)
+ * 	Bleu foncé 	: rgba(1, 115, 135,1)
+ * 	Bleu Clair 	: rgba(54, 183, 205,1)
+ * 	Vert foncé 	: rgba(81, 167, 4,1)
+ * 	Vert Clair 	: 
+ *	Jaune orangé: rgba(251, 199, 34,1)
+ *  Orange 		: rgba(242, 140, 31,1);
+*/
+ @charset"UTF-8";
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
+ @import url('https://fonts.googleapis.com/css?family=Caveat');
+ @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+ body {
+    font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size:100%;
+}
+.thread-title--item {
+    color: #51A704;
+}
+.lbox--v-3 .thread-username {
+    color:#017387;
+}
+article .cept-thread-content div div.border--color-borderGrey {
+    background-color:#017387;
+}
+/* Icon admin */
+ .icon--verified {
+    color:#0e68b5;
+}
+/* bordures cadres */
+ .border--color-borderGrey {
+    border-color:#017387;
+}
+/* redimensionne la page pour élimination des marges */
+ .page2-center, .listLayout {
+    max-width:100%;
+    padding-left:20px;
+}
+/* DEALS */
+ .cept-dealBtn {
+    max-width: 200px;
+}
+.voucher {
+    word-break:break-all;
+}
+article .threadGrid .threadGrid-body .sflex--dir-row-revere, article .threadGrid .threadGrid-body .width--fromW2-6, article .threadGrid .threadGrid-body .width--fromW2-6 .flex {
+    width:unset;
+    display:inline;
+}
+article .threadGrid .threadGrid-body .width--fromW2-6 .voucher .border--dash input.width--all-12 {
+    width:unset;
+}
+article .threadGrid .threadGrid-body .width--fromW2-6 .voucher .border--dash {
+    display: block;
+    margin: 10px 0;
+}
+article .threadGrid .threadGrid-body {
+    text-align:right;
+}
+article .threadGrid .threadGrid-body .userHtml {
+    text-align:left;
+}
+article .threadGrid .threadGrid-body .voucher .border--dash {
+    line-break:22px;
+    line-height:2px;
+}
+.voucher .width--all-12, .voucher .width--all-6 {
+    width:unset;
+}
+article.thread--deal:nth-child(even) {
+    background-color : #f7fdff;
+    border-top:1px solid #36B7CD;
+}
+.conversationMessages .cept-message:nth-child(even) {
+    background-color : #f7fdff;
+    border-top:1px solid #36B7CD;
+}
+article.thread--deal .thread-image {
+    border-radius: 6px;
+}
+.js-newsletter-widget {
+    background-color : #017387;
+    color:#FFFFFF;
+    border:1px solid black;
+}
+.js-newsletter-widget .cept-vote-box span {
+    color : #51A704;
+}
+.cept-comment-link:hover {
+    background-color: #51A704;
+    color: #FFF;
+}
+.cept-comment-link {
+    color: #51A704;
+    background-color: none;
+}
+.cept-save-btn:hover span {
+    background-color: #017387;
+    color: #FFF;
+}
+.cept-save-btn span {
+    color: #017387;
+    background-color: none;
+}
+.thread--expired .threadGrid {
+    background-color: #F6F7F9;
+    background-image: url("https://image.ibb.co/gsrG3o/60_lines.png");
+}
+/* thread */
+ .cept-thread-report:hover {
+    color: #E00034;
+    background-color: none;
+}
+.cept-threadOptions-save:hover {
+    color: #017387;
+    background-color: none;
+}
+.cept-thread-expire-btn:hover, .cept-thread-expire-btn:hover svg {
+    color: #f4b11f;
+    background-color: none;
+}
+.cept-thread-expire-btn svg {
+    color: grey;
+    background-color: none;
+}
+[data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover {
+    color: #51A704;
+    background-color: none;
+}
+.thread-info-add:hover {
+    color: #44BCD1;
+    background-color: none;
+}
+#main .cept-thread-content .border--color-borderGrey {
+    border-color: #36B7CD;
+}
+#main .cept-thread-content .border--color-borderGrey span>span svg {
+    color: #36B7CD;
+}
+#main .cept-thread-content .border--color-borderGrey span>span:nth-child(2) {
+    color: white;
+}
+#main .thread-title--list {
+    color:#51A704;
+}
+[data-track='{"action":"toggle_thread_update","label":"engagement"}'] time {
+    color:rgba(224, 0, 52, 0.3);
+    ;
+}
+/* tread update */
+ .thread-updates-top {
+    background-color:rgba(224, 0, 52, 0.05);
+}
+[data-track='{"action":"toggle_thread_update","label":"engagement"}'] time {
+    color:rgba(224, 0, 52, 0.3);
+    ;
+}
+[data-track='{"action":"toggle_thread_update","label":"engagement"}'] .toggleSect-icon {
+    color:rgba(224, 0, 52, 1);
+}
+.threadGrid-body[data-handler='lightbox-xhr emoticon-preview'] .cept-threadUpdate-html {
+    font-family:'Josefin Slab';
+    font-weight : 300;
+    font-style:normal;
+    font-size:1em;
+}
+/* widget barre droite */
+
+/* les hots ! */
+ .cept-hottest-widget-position-side .card-header {
+    background-color: #E00034;
+}
+.cept-hottest-widget-position-side .card-header .card-title, .cept-hottest-widget-position-side .card-header .plainSelect, .cept-hottest-widget-position-side .card-header .clickable span svg {
+    color: white;
+}
+/* Activités */
+ .cept-hottest-widget-position-side .card-header {
+    background-color: #E00034;
+}
+[data-track='{"category":"widget_user_activities"}'] .card-header .card-title, [data-track='{"category":"widget_user_activities"}'] .card-header .plainSelect, [data-track='{"category":"widget_user_activities"}'] .card-header .clickable span svg {
+    color: white;
+}
+[data-track='{"category":"widget_user_activities"}'] .card-header {
+    background-color:#8AC457;
+}
+[data-track='{"category":"widget_user_activities"}'] .card-footer .icon--left, [data-track='{"category":"widget_user_activities"}'] .card-footer .icon--right {
+    color:#8AC457;
+}
+[data-track='{"category":"widget_user_activities"}'] .carousel {
+    padding-top:30px;
+}
+.cept-top-group-widget .card-title {
+    color: white;
+    background-color:#03A5C1;
+}
+.icon--flame {
+    color:red;
+}
+.icon--hourglass {
+    color:#f4b11f;
+}
+.icon--location {
+    color:#017387;
+}
+[data-track='{"category":"widget_user_activities"}'] .cept-carousel-pages span.dot.bg--brandPrimary {
+    color:#8AC457;
+}
+[data-track='{"category":"widget_user_activities"}'] .carousel .carousel-list-item a.card-itemSpace:hover .userHtml .text--color-greyShade span:nth-child(2) {
+    color: #51A704;
+}
+[data-track='{"category":"widget_user_activities"}'] .carousel .carousel-list-item a.card-itemSpace .userHtml .text--color-greyShade {
+    color: #51A704;
+    background-color: none;
+}
+/* commentaires */
+ article .cept-thread-content {
+    border-left:1px solid #017387;
+    border-right:1px solid #017387;
+    border-bottom:1px solid #017387;
+}
+article .cept-thread-main {
+    border-left:1px solid #017387;
+    border-right:1px solid #017387;
+    border-top:1px solid #017387;
+}
+#comments #thread-comments .bg--inverted, nav.comments-pagination.bg--greyPanel {
+    background-color:#51A704;
+    color:black;
+}
+#comments .comments-list {
+    border: 0px solid #408202;
+}
+#comments .comments-list {
+    border: 0px solid #408202;
+}
+.comments-link--unread {
+    color:white;
+}
+/* Ajout de commentaire footer */
+[data-track='{"category":"comment_add_form"}'] #comment-form {
+    background-color:#017387;
+}
+[data-track='{"category":"comment_add_form"}'] div .text--b {
+    color:white;
+}
+[data-track='{"category":"comment_add_form"}'] .redactor-footer div label {
+    color:white;
+}
+[data-track='{"category":"comment_add_form"}'] .cept-comment-button:hover span {
+    background-color:white;
+    color: #51A704;
+}
+[data-track='{"category":"comment_add_form"}'] .cept-comment-button span {
+    background-color:#51A704;
+    color: white;
+}
+/* pagination commentaires */
+ .comments-pagination--header .tGrid .pagination-page.text--color-, .comments-pagination--header .tGrid .cept-next-page:hover, .comments-pagination--header .tGrid .cept-first-page:hover {
+    color:black;
+}
+.comments-pagination--header .tGrid[data-track='{"action":"goto_last_page","beacon":true}']:hover.cept-last-page, a:hover.cept-last-page.pagination-page, a:hover.cept-first-page.pagination-page {
+    color:black;
+}
+.comments-item-inner .comment-footer .comment-report:hover span.text--color-greyShade {
+    color: #E00034;
+    background-color: none;
+}
+.comments-item-inner .comment-footer .cept-like-comment:hover span.text--color-greyShade {
+    color: #3b5998;
+    background-color: none;
+}
+.comments-item-inner .comment-footer[data-handler='popover track']:hover span.text--color-greyShade {
+    color: #551A8B;
+    background-color: none;
+}
+.comments-item-inner .comment-footer[data-handler='track quote-add']:hover span.text--color-greyShade {
+    color: #51A704;
+    background-color: none;
+}
+.comments-list article {
+    border-bottom: 1px solid #51A704;
+}
+/*
+article div div .comment-header .user span {
+    color:#017387;
+}
+*/
+ article div div .comment-header time.text--color-greyShade {
+    color:#F4B326;
+}
+article div div .comment-body .mute--text {
+    color:#51A704;
+    font-size:0.65em;
+    padding-top:10px;
+}
+.cept-like-comment-count.text--color-greyShade:hover .lbox--v-1 {
+    color: #915fc6;
+}
+.cept-like-comment-count.text--color-greyShade .lbox--v-1 {
+    color: #aa83d3;
+}
+/* spoilers */
+ .comment-body .userHtml-quote {
+    font-family:'Caveat', Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size:1.1em;
+}
+.userHtml-quote-author {
+    font-family:Roboto;
+}
+.userHtml-quote-content {
+    background-color: #F6F4FF !important;
+    border: 1px dotted #776DA3;
+    padding:5px;
+}
+.userHtml-quote-content[data-handler='toggle'] {
+    color: #776DA3 !important;
+}
+/* PROFIL : Activité */
+ #tab-activity .userProfile-action-item:nth-child(even) {
+    background-color : rgba(81, 167, 4, 0.03);
+    border-top:1px solid #51a704;
+}
+.tabbedInterface-tabs[href='#activity'] {
+    color:rgba(81, 167, 4, 1);
+}
+#tab-activity ul li a div div .userHtml strong, #tab-activity ul li a div div .text--color-greyShade {
+    color:rgba(81, 167, 4, 1);
+}
+#tab-activity ul li a div div .text--color-greyShade .icon--comment, #tab-activity ul li a div div .text--color-greyShade span {
+    color:rgba(81, 167, 4, 0.5);
+}
+#tab-badges ol li:nth-child(even) {
+    background-color : rgba(251, 199, 34, 0.03);
+    border-top:1px solid rgba(251, 199, 34, 1);
+}
+.tabbedInterface-tabs[href='#badges'] {
+    color:rgba(251, 199, 34, 1);
+}
+/* PROFIL : Badges */
+ #tab-badges ol li div p.tGrid strong {
+    color:#017387;
+}
+/* PROFIL : Navigation gauche */
+ .page-content div div section h2.lbox--v-8.hide--toW2 {
+    color:red;
+}
+.page-content section ul li span .icon--thumb-up {
+    color: #3B5998;
+}
+/* PROFIL - profile/userName/discussions */
+ article .thread-fullMode .threadGrid-headerMeta div .flex span.lbox--v-4 {
+    color:rgba(81, 167, 4, 0.4);
+}
+article .thread-fullMode .threadGrid-title .thread-title {
+    color:#51A704;
+}
+/* PROFIL - Header */
+ .profileHeader .profileHeader-text.space--l-1.space--mr-3.overflow--wrap-off.size--all-s, .profileHeader .icon--cake {
+    color:white;
+}
+/* dealabs.com/discussions-commentes */
+ article .thread-fullMode .threadGrid-headerMeta .flex div a.linkPlain, [data-handler='popover track']:hover span {
+    color:#551A8B;
+}
+article .thread-fullMode .threadGrid-headerMeta .flex div a.linkPlain, [data-handler='track quote-add']:hover span {
+    color:rgba(54, 183, 205, 1);
+}
+/* dealabs.com/discussions */
+ #main .cept-tb {
+    background-color: rgba(1, 115, 135, 1);
+    color: white;
+    margin-right:50px;
+}
+#main .cept-tb:hover {
+    background-color: white;
+    color: rgba(1, 115, 135, 1);
+    border: 1px solid rgba(1, 115, 135, 1);
+}
+.comment .comment-footer .cept-commentOptions-edit span:hover, .cept-threadOptions-edit:hover {
+    color: rgba(242, 140, 31, 1);
+    background-color: none;
+}
+/* BOITE MESSAGES */
+ #main .cept-sendBtn {
+    background-color: rgba(1, 115, 135, 1);
+    color: white;
+    margin-right:50px;
+}
+#main .cept-sendBtn:hover {
+    background-color: white;
+    color: rgba(1, 115, 135, 1);
+    border: 1px solid rgba(1, 115, 135, 1);
+}
+/* Discussion - Corps de message - Lien */
+ .cept-comment-container a.link {
+    color: #006df0 !important;
+    font-size: 0.9em;
+    font-weight: 400;
+    font-style:italic;
+    padding-bottom:2px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding-left: 16px;
+    background-image: url(https://image.ibb.co/hjKQw8/Link.png);
+    background-size: 14px 14px;
+    vertical-align: middle;
+}
