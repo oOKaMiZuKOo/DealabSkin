@@ -11,9 +11,9 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 25/07/2018 - [Theme du site Dealabs] DealabSweetSkin Version 0.1
+ *    Dernière MAJ : 27/07/2018 - [Theme du site Dealabs] DealabSweetSkin v1.0
  *    
- *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/discussions/theme-dealabscom-dealabsweetskin-par-ookamizukoo-1252470
+ *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
  *    N'hésitez pas à me remonter les bugs, ou toute autre remarques sur le topic dédié.
  *    Les demandes d'évolutions seront fonction de mes disponibilités. 
@@ -38,6 +38,19 @@
  *                                      	> Parcours des pages et corrections pour adaptation au skin au fur et à mesure
  *											> Elargissement pour plein écran par suppression des marges gauches et droites
  * 											> Modification des liens précédés d'une icon "link" dans les discussions
+ *
+ *      1.0 - 27/07/2017 :
+ *      ----------------------------------------
+ *                             Objet : Corrections et améliorations 
+ *
+ *                             Réalisation de :
+ *                                      - Correction de background-color:none @ background-color:transparent; 
+ *                                      - Changement de couleur des noms d'auteurs de commentaires et couleur différente pour le posteur du topic
+ *                                      - Rectification graphique pour mise en avant de deal expiré
+ *                                      - Correction des boites côté droit (couleurs principalement)
+ *                                      - Ajout de shadow aux images d'un post
+ *                                      - Le GROS PLUS : Disctinction des topics de deal (bleu) / discussion (vert) par couleurs 
+ *
  * 
  * GLOSSAIRE Couleurs :
  * ====================
@@ -53,21 +66,28 @@
  @import url('https://fonts.googleapis.com/css?family=Roboto');
  @import url('https://fonts.googleapis.com/css?family=Caveat');
  @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
  body {
-    font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size:100%;
 }
+
+h1, h2, h3 {
+    font-family: Montserrat;
+    font-size:100%;
+}
+
 .thread-title--item {
     color: #51A704;
 }
 .lbox--v-3 .thread-username {
     color:#017387;
 }
-article .cept-thread-content div div.border--color-borderGrey {
-    background-color:#017387;
-}
+
 /* Icon admin */
- .icon--verified {
+ .icon--verified  {
     color:#0e68b5;
 }
 /* bordures cadres */
@@ -104,16 +124,18 @@ article .threadGrid .threadGrid-body .userHtml {
     text-align:left;
 }
 article .threadGrid .threadGrid-body .voucher .border--dash {
-    line-break:22px;
     line-height:2px;
 }
 .voucher .width--all-12, .voucher .width--all-6 {
     width:unset;
 }
+/*
 article.thread--deal:nth-child(even) {
     background-color : #f7fdff;
     border-top:1px solid #36B7CD;
 }
+
+*/
 .conversationMessages .cept-message:nth-child(even) {
     background-color : #f7fdff;
     border-top:1px solid #36B7CD;
@@ -135,7 +157,7 @@ article.thread--deal .thread-image {
 }
 .cept-comment-link {
     color: #51A704;
-    background-color: none;
+    background-color: transparent;
 }
 .cept-save-btn:hover span {
     background-color: #017387;
@@ -143,37 +165,36 @@ article.thread--deal .thread-image {
 }
 .cept-save-btn span {
     color: #017387;
-    background-color: none;
+    background-color: transparent;
 }
-.thread--expired .threadGrid {
-    background-color: #F6F7F9;
-    background-image: url("https://image.ibb.co/gsrG3o/60_lines.png");
-}
+
 /* thread */
- .cept-thread-report:hover {
+
+.cept-thread-report:hover {
     color: #E00034;
-    background-color: none;
+    background-color: transparent;
 }
 .cept-threadOptions-save:hover {
     color: #017387;
-    background-color: none;
+    background-color: transparent;
 }
 .cept-thread-expire-btn:hover, .cept-thread-expire-btn:hover svg {
     color: #f4b11f;
-    background-color: none;
+    background-color: transparent;
 }
 .cept-thread-expire-btn svg {
     color: grey;
-    background-color: none;
+    background-color: transparent;
 }
 [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover {
     color: #51A704;
-    background-color: none;
+    background-color: transparent;
 }
 .thread-info-add:hover {
     color: #44BCD1;
-    background-color: none;
+    background-color: transparent;
 }
+
 #main .cept-thread-content .border--color-borderGrey {
     border-color: #36B7CD;
 }
@@ -183,13 +204,22 @@ article.thread--deal .thread-image {
 #main .cept-thread-content .border--color-borderGrey span>span:nth-child(2) {
     color: white;
 }
-#main .thread-title--list {
-    color:#51A704;
+#main .cept-tt {
+    color: #017387;
 }
+
 [data-track='{"action":"toggle_thread_update","label":"engagement"}'] time {
     color:rgba(224, 0, 52, 0.3);
     ;
 }
+
+
+#main .threadGrid-headerMeta div span.text--color-greyShade,
+#main .threadGrid-headerMeta div span svg.text--color-greyShade {
+    color: #017387;
+}
+
+
 /* tread update */
  .thread-updates-top {
     background-color:rgba(224, 0, 52, 0.05);
@@ -207,7 +237,76 @@ article.thread--deal .thread-image {
     font-style:normal;
     font-size:1em;
 }
+
+/* Deal expirés */
+
+.thread--expired .threadGrid {
+    background-color: #F6F7F9;
+    background-image: url("https://image.ibb.co/gsrG3o/60_lines.png");
+}
+
+#main .thread--expired {
+    border-top:1px solid #35373b;
+}
+
+#main .thread--expired span,
+#main .thread--expired a,
+#main .thread--expired svg {
+    color: #35373b;
+}
+
+#main .thread--expired a.cept-comment-link:hover {
+    background-color: #BFC3C8;
+}
+
+.overflow--fade::after {background:none;}
+
 /* widget barre droite */
+
+.card-inner .card-header {
+    text-align:center;
+    padding-top:15px;
+    margin-bottom: 20px;
+    border-top: 1px solid #017387;
+    border-bottom: 1px solid #017387;
+
+}
+/* Marchands */
+.cept-merchants-thumbnail .card-header {
+    background-color: #eaad5d;
+}
+
+.cept-merchants-thumbnail .card-header h3 {
+    color: white;
+}
+
+/* Voyages pirates */
+[data-track='{"category":"widget_pirates_carousel"}'] .card-header {
+    background-color: #6A3460;
+}
+
+[data-track='{"category":"widget_pirates_carousel"}'] .card-header h3 {
+    color: white;
+    padding-bottom:15px;
+}
+
+
+/* Discussion récentes */
+
+[data-track='{"category":"widget_user_activities"}'] .card-header .plainSelect, [data-track='{"category":"widget_discussions_carousel_card"}'] .card-header h3 {
+    color: white;
+}
+[data-track='{"category":"widget_discussions_carousel_card"}'] .card-header  {
+    background-color:#8AC457;
+}
+
+[data-track='{"category":"widget_discussions_carousel_card"}'] .carousel ol li div a.text--b {
+    color: #51A704;
+}
+
+[data-track='{"category":"widget_discussions_carousel_card"}'] .carousel ol li div div time span.hide--toW3 {
+    color: rgba(53, 55, 59, 0.5);
+}
 
 /* les hots ! */
  .cept-hottest-widget-position-side .card-header {
@@ -216,6 +315,15 @@ article.thread--deal .thread-image {
 .cept-hottest-widget-position-side .card-header .card-title, .cept-hottest-widget-position-side .card-header .plainSelect, .cept-hottest-widget-position-side .card-header .clickable span svg {
     color: white;
 }
+
+/* deal hot similaires */
+[data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header {
+    background-color: #E00034;
+}
+[data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-title, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .plainSelect, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .clickable span svg {
+    color: white;
+}
+
 /* Activités */
  .cept-hottest-widget-position-side .card-header {
     background-color: #E00034;
@@ -232,12 +340,27 @@ article.thread--deal .thread-image {
 [data-track='{"category":"widget_user_activities"}'] .carousel {
     padding-top:30px;
 }
+
+[data-track='{"category":"widget_user_activities"}'] .carousel ol li div p strong {
+    color: #51A704;
+}
+
+[data-track='{"category":"widget_user_activities"}'] .carousel ol li a div p span.flex--width-calc-fix {
+    color: rgba(81, 167, 4, 0.5);
+}
+
+[data-track='{"category":"widget_user_activities"}'] .carousel ol li a div p span.flex svg {
+    color: rgba(81, 167, 4, 0.5);
+}
+
+
+
 .cept-top-group-widget .card-title {
     color: white;
     background-color:#03A5C1;
 }
 .icon--flame {
-    color:red;
+    color: #E00034;
 }
 .icon--hourglass {
     color:#f4b11f;
@@ -253,19 +376,162 @@ article.thread--deal .thread-image {
 }
 [data-track='{"category":"widget_user_activities"}'] .carousel .carousel-list-item a.card-itemSpace .userHtml .text--color-greyShade {
     color: #51A704;
-    background-color: none;
+    background-color: transparent;
 }
-/* commentaires */
- article .cept-thread-content {
-    border-left:1px solid #017387;
-    border-right:1px solid #017387;
-    border-bottom:1px solid #017387;
+
+
+
+/* topic forum */
+body.page article.thread--discussion article .threadItem {
+    background-color: #f6fcf0;
+    border-top: 2px solid #51A704;
+    border-left: 1px solid #51A704;
+    border-right : 1px solid #51A704;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
 }
-article .cept-thread-main {
-    border-left:1px solid #017387;
-    border-right:1px solid #017387;
+
+body.page article.thread--discussion .cept-thread-content {
+    background-color: #f6fcf0;
+    border-left: 2px solid #51A704;
+    border-right : 2px solid #51A704;
+}
+
+body.page article.thread--discussion .js-options {
+    background-color: #FFF;
+    border-top: 1px solid #51A704;
+    border-bottom: 1px solid #51A704;
+}
+
+body.page .thread--discussion .thread-title--item {
+    color: #51A704;
+    
+}
+
+.thread--discussion .threadGrid .threadGrid-headerMeta div div a.linkPlain {
+    color: #51A704;    
+}
+
+
+#main .thread--discussion .cept-thread-content div:nth-child(1) div.border--color-borderGrey {
+    background-color : #51a704;
+    border:1px solid #f9fff4;
+
+}
+
+
+
+/* topic deal */
+body.page article.thread--deal .cept-thread-main {
+    background-color: #f6feff;
+    border-top: 2px solid #017387;
+    border-left: 2px solid #017387;
+    border-right : 2px solid #017387;
+
+}
+
+body.page article.thread--deal .cept-thread-content {
+    background-color: #f6feff;
+    border-left: 2px solid #017387;
+    border-right : 2px solid #017387;
+}
+
+body.page article.thread--deal .js-options {
+    background-color: #FFF;
+   
+    border-top: 1px solid #017387;
+    border-bottom: 1px solid 
+}
+
+body.page .thread--deal .thread-title--item {
+    color: #017387;
+    
+}
+
+article.thread--deal .cept-thread-content div div.border--color-borderGrey {
+    background-color:#017387;
+
+}
+
+
+/* Alternance couleur articles */
+
+body.page #main .thread--deal:nth-child(even) {
+
+ background-color : #f6feff; 
     border-top:1px solid #017387;
+    
 }
+
+/* alternance couleur liste commentaires */
+
+
+body.page #main .comments-list-item:nth-child(even) {
+
+    background-color : #f9fff4;
+    border-top:1px solid #51a704;
+    
+}
+
+
+article div div .comment-header .user span,
+.thread-username {
+    color: #017387;
+}
+
+
+.comment-body img {
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    padding:2px;
+    display:inline-block;
+    background: white;
+    border: 1px solid #017387;
+}
+
+
+
+article div div .comment-header .thread-user span.text--color-brandPrimary,
+.threadItem-footerMeta .user .thread-username {
+    color:#E00034;  
+}
+
+.comments-item-inner .comment-footer .cept-like-comment:hover span.text--color-greyShade {
+    color: #3b5998;
+    background-color: transparent;
+}
+.comments-item-inner .comment-footer[data-handler='popover track']:hover span.text--color-greyShade {
+    color: #551A8B;
+    background-color: transparent;
+}
+.comments-item-inner .comment-footer[data-handler='track quote-add']:hover span.text--color-greyShade {
+    color: #51A704;
+    background-color: transparent;
+}
+.comments-list article {
+    border-bottom: 1px solid #51A704;
+}
+
+ article div div .comment-header time.text--color-greyShade {
+    color:#F4B326;
+}
+article div div .comment-body .mute--text {
+    color:#51A704;
+    font-size:0.65em;
+    padding-top:10px;
+}
+
+/* Bouton compteur de like  */
+.cept-like-comment-count.text--color-greyShade:hover .lbox--v-1 {
+    color: #915fc6;
+}
+.cept-like-comment-count.text--color-greyShade .lbox--v-1 {
+    color: #aa83d3;
+}
+
+
 #comments #thread-comments .bg--inverted, nav.comments-pagination.bg--greyPanel {
     background-color:#51A704;
     color:black;
@@ -306,42 +572,9 @@ article .cept-thread-main {
 }
 .comments-item-inner .comment-footer .comment-report:hover span.text--color-greyShade {
     color: #E00034;
-    background-color: none;
+    background-color: transparent;
 }
-.comments-item-inner .comment-footer .cept-like-comment:hover span.text--color-greyShade {
-    color: #3b5998;
-    background-color: none;
-}
-.comments-item-inner .comment-footer[data-handler='popover track']:hover span.text--color-greyShade {
-    color: #551A8B;
-    background-color: none;
-}
-.comments-item-inner .comment-footer[data-handler='track quote-add']:hover span.text--color-greyShade {
-    color: #51A704;
-    background-color: none;
-}
-.comments-list article {
-    border-bottom: 1px solid #51A704;
-}
-/*
-article div div .comment-header .user span {
-    color:#017387;
-}
-*/
- article div div .comment-header time.text--color-greyShade {
-    color:#F4B326;
-}
-article div div .comment-body .mute--text {
-    color:#51A704;
-    font-size:0.65em;
-    padding-top:10px;
-}
-.cept-like-comment-count.text--color-greyShade:hover .lbox--v-1 {
-    color: #915fc6;
-}
-.cept-like-comment-count.text--color-greyShade .lbox--v-1 {
-    color: #aa83d3;
-}
+
 /* spoilers */
  .comment-body .userHtml-quote {
     font-family:'Caveat', Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -385,7 +618,7 @@ article div div .comment-body .mute--text {
 }
 /* PROFIL : Navigation gauche */
  .page-content div div section h2.lbox--v-8.hide--toW2 {
-    color:red;
+    color: #E00034;
 }
 .page-content section ul li span .icon--thumb-up {
     color: #3B5998;
@@ -408,21 +641,8 @@ article .thread-fullMode .threadGrid-title .thread-title {
 article .thread-fullMode .threadGrid-headerMeta .flex div a.linkPlain, [data-handler='track quote-add']:hover span {
     color:rgba(54, 183, 205, 1);
 }
-/* dealabs.com/discussions */
- #main .cept-tb {
-    background-color: rgba(1, 115, 135, 1);
-    color: white;
-    margin-right:50px;
-}
-#main .cept-tb:hover {
-    background-color: white;
-    color: rgba(1, 115, 135, 1);
-    border: 1px solid rgba(1, 115, 135, 1);
-}
-.comment .comment-footer .cept-commentOptions-edit span:hover, .cept-threadOptions-edit:hover {
-    color: rgba(242, 140, 31, 1);
-    background-color: none;
-}
+
+
 /* BOITE MESSAGES */
  #main .cept-sendBtn {
     background-color: rgba(1, 115, 135, 1);
@@ -447,4 +667,146 @@ article .thread-fullMode .threadGrid-headerMeta .flex div a.linkPlain, [data-han
     background-image: url(https://image.ibb.co/hjKQw8/Link.png);
     background-size: 14px 14px;
     vertical-align: middle;
+}
+
+
+/* change couleur icones png en vert forum */
+
+
+.listingProfile .js-topDiscussions img.imgFrame-img,
+.listingProfile-info img.imgFrame-img {
+
+filter: grayscale(0%) hue-rotate(278deg);
+-webkit-filter: grayscale(0%) hue-rotate(278deg);
+
+}
+
+.thread--discussion:nth-child(even)  {
+    background-color : #f9fff4;
+    border:1px solid #51a704;
+} 
+
+.cept-nav-subheadline {
+    color:#51a704;
+}
+
+.listingProfile-actions a.btn--mode-primary {
+    color:#f9fff4;
+    background-color : #51a704;
+}
+
+.listingProfile-actions a.btn--mode-primary:hover {
+    color:#51a704;
+    background-color : #f9fff4;
+    border: 1px solid #51a704;
+}
+/*
+#tour-filter div ul li a span,
+#tour-filter div ul li a.subNavMenu-link--selected {
+    color: #51a704;
+    font-weight: 700;
+    
+    
+}
+*/
+
+
+
+
+
+/* topic deal */
+body.page article.thread--deal .cept-thread-main {
+    background-color: #f6feff;
+    border-top: 1px solid #017387;
+    border-left: 1px solid #017387;
+    border-right : 1px solid #017387;
+
+}
+
+body.page article.thread--deal .cept-thread-content {
+    background-color: #f6feff;
+    border-left: 1px solid #017387;
+    border-right : 1px solid #017387;
+}
+
+body.page article.thread--deal .js-options {
+    background-color: #FFF;
+   
+    border-top: 1px solid #017387;
+    border-bottom: 1px solid 
+}
+
+body.page .thread--deal .thread-title--item {
+    color: #017387;
+    
+}
+
+article.thread--deal .cept-thread-content div div.border--color-borderGrey {
+    background-color:#017387;
+
+}
+
+
+/* topic forum */
+.thread--discussion article .threadItem {
+    background-color: #f6fcf0;
+    border-top: 1px solid #51A704;
+    border-left: 1px solid #51A704;
+    border-right : 1px solid #51A704;
+}
+
+.thread--discussion .cept-thread-content {
+    background-color: #f6fcf0;
+    border-left: 1px solid #51A704;
+    border-right : 1px solid #51A704;
+}
+
+.thread--discussion .js-options {
+    background-color: #FFF;
+    border-top: 1px solid #51A704;
+    border-bottom: 1px solid #51A704;
+    
+}
+
+.thread--discussion .thread-title--item {
+    color: #51A704;
+    
+}
+/* dealabs.com/discussions */
+
+
+
+.comment .comment-footer .cept-commentOptions-edit span:hover, .cept-threadOptions-edit:hover {
+    color: rgba(242, 140, 31, 1);
+    background-color: transparent;
+}
+
+#main .thread--discussion .cept-thread-content div:nth-child(1) div.border--color-borderGrey {
+    background-color : #51a704;
+    border:1px solid #f9fff4;
+
+}
+
+.thread--discussion .threadGrid .threadGrid-headerMeta div div a.linkPlain {
+    color: black;    
+}
+
+.cept-listing--list div.threadGrid-title a[href^="https://www.dealabs.com/discussions/"] {
+    color: #51A704 !important;    
+}
+
+.threadGrid-footerMeta .cept-tb[href^="https://www.dealabs.com/discussions/"] {
+    background-color : #51a704;
+    border:1px solid #f9fff4;
+    color: white;
+}
+
+.threadGrid-footerMeta .cept-tb[href^="https://www.dealabs.com/discussions/"]:hover {
+    background-color : white;
+    border:1px solid  #51a704;
+    color:  #51a704;
+}
+
+.threadItem-ribbonIcoCell svg {
+    color:white !important;
 }
