@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 27/07/2018 - [Theme du site Dealabs] DealabSweetSkin v1.0
+ *    Dernière MAJ : 27/07/2018 - [Theme du site Dealabs] DealabSweetSkin v1.01
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -24,6 +24,21 @@
  *
  *    Historique :
  *
+ *      1.01 - 25/07/2017 :
+ *      ----------------------------------------
+ *                             Objet : Ajout fonctionalité pour support mobile ( @media )
+ *
+ *      1.0 - 27/07/2017 :
+ *      ----------------------------------------
+ *                             Objet : Corrections et améliorations 
+ *
+ *                             Réalisation de :
+ *                                      - Correction de background-color:none @ background-color:transparent; 
+ *                                      - Changement de couleur des noms d'auteurs de commentaires et couleur différente pour le posteur du topic
+ *                                      - Rectification graphique pour mise en avant de deal expiré
+ *                                      - Correction des boites côté droit (couleurs principalement)
+ *                                      - Ajout de shadow aux images d'un post
+ *                                      - Disctinction des topics de deal (bleu) / discussion (vert) par couleurs 
  *      0.1 - 25/07/2017 :
  *      ----------------------------------------
  *                             Objet : Adaptation de l'interface "nouvelle" de Delabds (depuis DealabSkin) 
@@ -38,19 +53,6 @@
  *                                      	> Parcours des pages et corrections pour adaptation au skin au fur et à mesure
  *											> Elargissement pour plein écran par suppression des marges gauches et droites
  * 											> Modification des liens précédés d'une icon "link" dans les discussions
- *
- *      1.0 - 27/07/2017 :
- *      ----------------------------------------
- *                             Objet : Corrections et améliorations 
- *
- *                             Réalisation de :
- *                                      - Correction de background-color:none @ background-color:transparent; 
- *                                      - Changement de couleur des noms d'auteurs de commentaires et couleur différente pour le posteur du topic
- *                                      - Rectification graphique pour mise en avant de deal expiré
- *                                      - Correction des boites côté droit (couleurs principalement)
- *                                      - Ajout de shadow aux images d'un post
- *                                      - Le GROS PLUS : Disctinction des topics de deal (bleu) / discussion (vert) par couleurs 
- *
  * 
  * GLOSSAIRE Couleurs :
  * ====================
@@ -68,7 +70,15 @@
  @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
  @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+@media (max-device-width:768px) and (orientation: landscape) {
+  html {
+   -webkit-text-size-adjust: 100%;
+   -ms-text-size-adjust: 100%;
+  }
+}
 
+@media (max-width: 4800px) {
+    
  body {
     font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size:100%;
@@ -809,4 +819,30 @@ article.thread--deal .cept-thread-content div div.border--color-borderGrey {
 
 .threadItem-ribbonIcoCell svg {
     color:white !important;
+}
+
+/*
+#main .cept-tb {
+    background-color: rgba(1, 115, 135, 1);
+    color: white;
+    margin-right:50px;
+}
+#main .cept-tb:hover {
+    background-color: white;
+    color: rgba(1, 115, 135, 1);
+    border: 1px solid rgba(1, 115, 135, 1);
+}
+
+article .cept-thread-content {
+    border-left:1px solid #017387;
+    border-right:1px solid #017387;
+    border-bottom:1px solid #017387;
+}
+article .cept-thread-main {
+    border-left:1px solid #017387;
+    border-right:1px solid #017387;
+    border-top:1px solid #017387;
+}*/
+    
+    
 }
