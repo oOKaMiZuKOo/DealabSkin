@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.031
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.032
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -1307,7 +1307,8 @@ input, select, .select-ctrl, .input {
 
 .js-layer.popover.popover--menu.popover--visible .popover-content.popover-content--expand .navDropDown-tabContent a:hover,
 .autoSuggest-suggestionsBox,
-.page2-center div.bg--white {
+.page2-center div.bg--white,
+footer-description {
     background-color:black;
     color:white;
 }
