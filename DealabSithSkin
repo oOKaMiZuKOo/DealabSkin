@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 06/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.021
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.03
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -21,8 +21,18 @@
  * 
  *    Bonne utilisation, j'espère que ce skin vous plaira (^.^) 
  *    ==========================================================================================
+ *
+ * 
+ * GLOSSAIRE Couleurs :
+ * ====================
+ * 	Rouge foncé	: rgba(224, 0, 52,1)
+ * 	Bleu foncé 	: rgba(1, 115, 135,1)
+ * 	Bleu Clair 	: rgba(54, 183, 205,1)
+ * 	Vert foncé 	: rgba(81, 167, 4,1)
+ * 	Vert Clair 	: 
+ *	Jaune orangé: rgba(251, 199, 34,1)
+ *  Orange 		: rgba(242, 140, 31,1);
 */
-
  @charset"UTF-8";
  @import url('https://fonts.googleapis.com/css?family=Roboto');
  @import url('https://fonts.googleapis.com/css?family=Caveat');
@@ -147,13 +157,17 @@ article.thread--deal:nth-child(even) {
 article.thread--deal .thread-image {
     border-radius: 6px;
 }
-.js-newsletter-widget {
+
+
+[data-track='{"category":"newsletter type:list"}'],
+[data-track='{"category":"whatsapp_signup type:list"}'] {
     background-color : #017387;
     color:#FFFFFF;
     border:1px solid black;
 }
-.js-newsletter-widget .cept-vote-box span {
-    color : #51A704;
+
+[data-track='{"category":"newsletter type:list"}'] .cept-vote-box span {
+    color : #E00034;
 }
 .cept-comment-link:hover {
     background-color: #51A704;
@@ -653,7 +667,7 @@ article.thread--deal .cept-thread-content div div.border--color-borderGrey {
 
 /* Alternance couleur articles */
 
-body.page #main .thread--deal {
+#main article[id^="thread_"] {
 
     color:white;
     background-color:black;
@@ -661,13 +675,65 @@ body.page #main .thread--deal {
     
 }
 
-body.page #main .thread--deal:nth-child(even) {
+#main article[id^="thread_"]:nth-child(even) {
 
     color:white;
     background-color:#35373B;
     border:3px solid #017387;
     
 }
+
+
+
+/* Boite popup message menu */
+
+#user-messages-dropdown #notifications-content-js .conversationList-msg a div span {
+    color:white;
+}
+
+#user-messages-dropdown #notifications-content-js .conversationList-msg {
+    background-color:black;
+    border-top:1px solid #017387;
+}
+
+#user-messages-dropdown #notifications-content-js .conversationList-msg:nth-child(even) {
+    background-color:#35373B;
+}
+
+#user-messages-dropdown .navDropDown-footer {
+    background-color:#017387;
+}
+
+/* boite popup notifications menu */
+
+#user-notifications-dropdown .notifications-content .notification-item a .notification-item-text {
+    color:white;
+}
+
+#user-notifications-dropdown .notifications-content .notification-item a .notification-item-text strong {
+    color: #03a5c1;
+}
+
+#user-notifications-dropdown .notifications-content .notification-item {
+    background-color:black;
+    border-top:1px solid #017387;
+}
+
+#user-notifications-dropdown .notifications-content .notification-item:nth-child(even) {
+    background-color:#35373B;
+}
+
+#user-notifications-dropdown .navDropDown-footer {
+    background-color:#017387;
+}
+
+
+
+
+/* **** */
+
+
+
 
 body.page #main .thread--deal .thread-link:visited,
 body.page #main .thread--deal .thread-link{
@@ -676,6 +742,10 @@ body.page #main .thread--deal .thread-link{
 
 /* alternance couleur liste commentaires */
 
+.redactor-editor {
+    background-color:black;
+    color:white;
+}
 
 /* top commentaires */
 
@@ -716,13 +786,8 @@ body.page #main .comments-list-item:nth-child(even)   {
 
 
 article div div .comment-header .user span,
-.thread-username {
-    color: #36B7CD;
-}
-
-article div div .comment-header .user span,
-.thread-username {
-    color: #36B7CD;
+.thread-username, .conversationList-senderLine {
+    color: #36B7CD !important;
 }
 
 
@@ -835,17 +900,52 @@ nav.comments-pagination.bg--greyPanel,
     font-family:Roboto;
 }
 .userHtml-quote-content {
-    background-color: #F6F4FF !important;
-    border: 1px dotted #776DA3;
+    background-color: #017387 !important;
+    border: 1px dashed #36B7CD;
     padding:5px;
 }
-.userHtml-quote-content[data-handler='toggle'] {
-    color: #776DA3 !important;
+.userHtml-quote-content {
+    color: white !important;
 }
+
+
 /* PROFIL : Activité */
- #tab-activity .userProfile-action-item:nth-child(even) {
-    background-color : rgba(81, 167, 4, 0.03);
+
+.tabbedInterface .tabbedInterface-tabs {
+    background-color:red;
+    color:white;
+}
+
+
+.tabbedInterface div.iGrid-item.box--fromW3-c.bg--main {
+    background-color:black;
+    color:white !important;
+}
+
+.tabbedInterface div.iGrid-item.box--fromW3-c.bg--main .formList-label,
+.tabbedInterface h2.userProfile-title--sub {
+   color: #03a5c1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#tab-activity .userProfile-action-item {
+    background-color : black;
     border-top:1px solid #51a704;
+    color:white;
+}
+
+#tab-activity .userProfile-action-item:nth-child(even) {
+    background-color : #35373B;
 }
 .tabbedInterface-tabs[href='#activity'] {
     color:rgba(81, 167, 4, 1);
@@ -856,21 +956,34 @@ nav.comments-pagination.bg--greyPanel,
 #tab-activity ul li a div div .text--color-greyShade .icon--comment, #tab-activity ul li a div div .text--color-greyShade span {
     color:rgba(81, 167, 4, 0.5);
 }
-#tab-badges ol li:nth-child(even) {
-    background-color : rgba(251, 199, 34, 0.03);
+
+[data-track='{"category":"pagination type:activity"}'] {
+    background-color:black;
+    color:white;
+}
+
+
+/* PROFIL : Badges */
+
+#tab-badges ol li {
+    background-color : black;
     border-top:1px solid rgba(251, 199, 34, 1);
+    color:white;
+}
+
+#tab-badges ol li:nth-child(even) {
+    background-color : #35373B;
+
 }
 .tabbedInterface-tabs[href='#badges'] {
     color:rgba(251, 199, 34, 1);
 }
-/* PROFIL : Badges */
+
  #tab-badges ol li div p.tGrid strong {
     color:#017387;
 }
 /* PROFIL : Navigation gauche */
- .page-content div div section h2.lbox--v-8.hide--toW2 {
-    color: #E00034;
-}
+
 .page-content section ul li span .icon--thumb-up {
     color: #3B5998;
 }
@@ -1108,7 +1221,91 @@ a[href^="https://www.dealabs.com/bons-plans/"],
     color:white !important;
 }
 
-.redactor-editor {
+
+
+
+
+
+.page-content .iGrid-item section.toggleSect.toggleSect--expanded.boxSec.bg--main {
+    background-color:#03A5C1;
+}
+
+[data-track='{"category":"user_profile_overview"}'] .iGrid .iGrid-item div.js-collapsableBox-content.boxSec-space.space--t-0 {
+    background-color:black !important;
+    color:white !important;
+}
+
+
+
+
+section.js-searchMsg {
+    background-color:black;
+    color:white;
+}
+
+
+input, select, .select-ctrl, .input {
+    background-color: #000 !important;
+    color:white;
+    border: 1px solid #36b7cd !important;
+}
+
+
+
+/* profil paramètres */
+
+.tabbedInterface {
+    background-color:black;
+}
+
+.tabbedInterface div.iGrid-item.box--fromW3-c.bg--main {
+    color:white !important;
+}
+
+.tabbedInterface div.iGrid-item.box--fromW3-c.bg--main .formList-label,
+.tabbedInterface h2.userProfile-title--sub {
+   color: #03a5c1;
+}
+
+
+.tabbedInterface .tabbedInterface-tab--selected {
+    pointer-events: none;
+    background-color: black;
+    color: white;
+}
+
+.tabbedInterface-tab {
+    background-color: black;
+    color:white;
+}
+
+[data-track='{"action":"show_tab","label":"engagement type:badges"}'].tabbedInterface-tab--selected,
+[data-track='{"action":"show_tab","label":"engagement type:activity"}'].tabbedInterface-tab--selected {
+    pointer-events: none;
+    background-color: #03a5c1 !important;
+    color: black !important;
+}
+
+
+
+
+.btn--disabled {
+  border: 1px solid #999999;
+    border-radius : 3px;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+
+/* popup activité menu */
+
+.js-layer.popover.popover--menu.popover--visible .popover-content.popover-content--expand {
+    background-color:#35373B;
+    color:#585B60;
+}
+
+
+.js-layer.popover.popover--menu.popover--visible .popover-content.popover-content--expand .navDropDown-tabContent a:hover {
     background-color:black;
     color:white;
 }
