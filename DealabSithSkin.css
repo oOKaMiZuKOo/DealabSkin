@@ -1,0 +1,1007 @@
+/***
+ *
+ * ______           _       _     _____ _ _   _     _____ _    _       
+ * |  _  \         | |     | |   /  ___(_) | | |   /  ___| |  (_)      
+ * | | | |___  __ _| | __ _| |__ \ `--. _| |_| |__ \ `--.| | ___ _ __  
+ * | | | / _ \/ _` | |/ _` | '_ \ `--. \ | __| '_ \ `--. \ |/ / | '_ \ 
+ * | |/ /  __/ (_| | | (_| | |_) /\__/ / | |_| | | /\__/ /   <| | | | |
+ * |___/ \___|\__,_|_|\__,_|_.__/\____/|_|\__|_| |_\____/|_|\_\_|_| |_|
+ *                                                                               
+ *                                                                               
+ *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
+ *                                                                 
+ *                                                                                         
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.1
+ *    
+ *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
+ *
+ *    N'hésitez pas à me remonter les bugs, ou toute autre remarques sur le topic dédié.
+ *    Les demandes d'évolutions seront fonction de mes disponibilités. 
+ *    
+ * 
+ *    Bonne utilisation, j'espère que ce skin vous plaira (^.^) 
+ *    ==========================================================================================
+ *
+ *    Historique :
+ *
+ *      1.1 - 06/08/2017 :
+ *      ----------------------------------------
+ *                             Objet : Mise en placve format mobile + corrections mineures
+ *      1.03 - 06/08/2017 :
+ *      ----------------------------------------
+ *                             Objet : Corrections mineures
+ *                                      - correction alternance de couleurs de la liste des deals en page principale
+ *                                      - correction couleur boite popup de messages au onlick du menu (#user-messages-dropdown)
+ *                                      - correction couleur boite popup de notifications au onlick du menu (#user-notifications-dropdown)
+ *                                      - correction couleur profil boite activités
+ *                                      - correction couleur input, select
+ *                                      - hartmonisation couleurs tabbed des paramètres de profil utilisateur
+ *                                      - refonte du bouton désactivé (.btn--disabled)
+ *                                      - correction couleur popup activité au onlick du menu
+ *      1.02 - 06/08/2017 :
+ *      ----------------------------------------
+ *                             Objet : Suppression de zones claires pour mise en conformité avec thème sombre (à compléter ultérieurement)
+ *                                      - refonte box droites
+ *                                      - mise en avant top commentaire
+ *      1.0 - 02/08/2017 :
+ *      ----------------------------------------
+ *                             Objet : Adaptation de l'interface en version obscure (Sith version) (depuis DealabSweetSkin 1.0) 
+ *
+ *
+ * 
+ * GLOSSAIRE Couleurs :
+ * ====================
+ * 	Rouge foncé	: rgba(224, 0, 52,1)
+ * 	Bleu foncé 	: rgba(1, 115, 135,1)
+ * 	Bleu Clair 	: rgba(54, 183, 205,1)
+ * 	Vert foncé 	: rgba(81, 167, 4,1)
+ * 	Vert Clair 	: 
+ *	Jaune orangé: rgba(251, 199, 34,1)
+ *  Orange 		: rgba(242, 140, 31,1);
+*/
+@charset"UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@media (max-device-width: 3500px) {
+    body {
+        font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 100%;
+    }
+    .tGrid-row.height--all-full {
+        background-color: #017387;
+    }
+    h1,
+    h2,
+    h3 {
+        font-family: Montserrat;
+        font-size: 100%;
+    }
+    .thread-title--item {
+        color: #51A704;
+    }
+    .lbox--v-3 .thread-username {
+        color: #017387;
+    }
+    /* Icon admin */
+    .icon--verified {
+        color: #0e68b5;
+    }
+    /* bordures cadres */
+    .border--color-borderGrey {
+        border-color: #017387;
+    }
+    /* redimensionne la page pour élimination des marges */
+    .page2-center,
+    .listLayout {
+        max-width: 100%;
+        padding-left: 20px;
+    }
+    /* DEALS */
+    .cept-dealBtn {
+        max-width: 200px;
+    }
+    .voucher {
+        word-break: break-all;
+    }
+    header .nav {
+        background-color: #017387;
+    }
+    header .nav-link span {
+        color: white;
+    }
+    header .nav-link span:hover,
+    .navMenu-page.nav-link-text.vAlign--all-m.hide--toW3 {
+        color: #02A5C1;
+    }
+    .subNav {
+        background-color: black;
+        border-top: 2px dashed #017387;
+    }
+    /*
+.listingProfile-footer {
+    border-top:2px dashed #51A704 !important;
+}
+*/
+    .cept-navMenu-trigger span,
+    .cept-navMenu-trigger svg {
+        color: white;
+    }
+    .cept-navMenu-trigger span:hover {
+        color: #02A5C1;
+    }
+    article .threadGrid .threadGrid-body .sflex--dir-row-revere,
+    article .threadGrid .threadGrid-body .width--fromW2-6,
+    article .threadGrid .threadGrid-body .width--fromW2-6 .flex {
+        width: unset;
+    }
+    article .threadGrid .threadGrid-body .width--fromW2-6 .voucher .border--dash input.width--all-12 {
+        width: unset;
+    }
+    article .threadGrid .threadGrid-body .width--fromW2-6 .voucher .border--dash {
+        display: block;
+        margin: 10px 0;
+    }
+    article .threadGrid .threadGrid-body {
+        text-align: right;
+    }
+    article .threadGrid .threadGrid-body .userHtml {
+        text-align: left;
+    }
+    article .threadGrid .threadGrid-body .voucher .border--dash {
+        line-height: 2px;
+    }
+    .voucher .width--all-12,
+    .voucher .width--all-6 {
+        width: unset;
+    }
+    /*
+article.thread--deal:nth-child(even) {
+    background-color : #f7fdff;
+    border-top:1px solid #36B7CD;
+}
+
+*/
+    article.thread--deal .thread-image {
+        border-radius: 6px;
+    }
+    [data-track='{"category":"newsletter type:list"}'],
+    [data-track='{"category":"whatsapp_signup type:list"}'] {
+        background-color: #017387;
+        color: #FFFFFF;
+        border: 1px solid black;
+    }
+    [data-track='{"category":"newsletter type:list"}'] .cept-vote-box span {
+        color: #E00034;
+    }
+    .cept-comment-link:hover {
+        background-color: #51A704;
+        color: #FFF;
+    }
+    .cept-comment-link {
+        color: #51A704;
+        background-color: transparent;
+    }
+    .cept-save-btn:hover span {
+        background-color: #017387;
+        color: #FFF;
+    }
+    .cept-save-btn span {
+        color: #017387;
+        background-color: transparent;
+    }
+    /* thread */
+    .cept-thread-report:hover {
+        color: #E00034;
+        background-color: transparent;
+    }
+    .cept-threadOptions-save:hover {
+        color: #017387;
+        background-color: transparent;
+    }
+    .cept-thread-expire-btn:hover,
+    .cept-thread-expire-btn:hover svg {
+        color: #f4b11f;
+        background-color: transparent;
+    }
+    .cept-thread-expire-btn svg {
+        color: grey;
+        background-color: transparent;
+    }
+    [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover {
+        color: #51A704;
+        background-color: transparent;
+    }
+    .thread-info-add:hover {
+        color: #44BCD1;
+        background-color: transparent;
+    }
+    #main .cept-thread-content .border--color-borderGrey {
+        border-color: #36B7CD;
+    }
+    #main .cept-thread-content .border--color-borderGrey span > span svg {
+        color: #36B7CD;
+    }
+    #main .cept-thread-content .border--color-borderGrey span > span:nth-child(2) {
+        color: white;
+    }
+    #main .cept-tt {
+        color: #017387;
+    }
+    [data-track='{"action":"toggle_thread_update","label":"engagement"}'] time {
+        color: rgba(224, 0, 52, 0.3);
+        ;
+    }
+    #main .threadGrid-headerMeta div span.text--color-greyShade,
+    #main .threadGrid-headerMeta div span svg.text--color-greyShade {
+        color: #017387;
+    }
+    /* tread update */
+    .thread-updates-top {
+        background-color: rgba(224, 0, 52, 0.05);
+    }
+    [data-track='{"action":"toggle_thread_update","label":"engagement"}'] time {
+        color: rgba(224, 0, 52, 0.3);
+        ;
+    }
+    [data-track='{"action":"toggle_thread_update","label":"engagement"}'] .toggleSect-icon {
+        color: rgba(224, 0, 52, 1);
+    }
+    .threadGrid-body[data-handler='lightbox-xhr emoticon-preview'] .cept-threadUpdate-html {
+        font-family: 'Josefin Slab';
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1em;
+    }
+    /* Deal expirés */
+    .thread--expired .threadGrid {
+        background-color: #F6F7F9;
+        background-image: url("https://image.ibb.co/gsrG3o/60_lines.png");
+    }
+    #main .thread--expired {
+        border-top: 1px solid #35373b;
+    }
+    #main .thread--expired span,
+    #main .thread--expired a,
+    #main .thread--expired svg {
+        color: #35373b;
+    }
+    #main .thread--expired a.cept-comment-link:hover {
+        background-color: #BFC3C8;
+    }
+    .overflow--fade::after {
+        background: none;
+    }
+    /* widget barre droite */
+    .card-inner .card-header {
+        text-align: center;
+        padding-top: 15px;
+        margin-bottom: 20px;
+        border-top: 1px solid #017387;
+        border-bottom: 1px solid #017387;
+    }
+    /* Marchands */
+    .cept-merchants-thumbnail .card-header {
+        background-color: #eaad5d;
+    }
+    .cept-merchants-thumbnail .card-header h3 {
+        color: white;
+    }
+    /* Voyages pirates */
+    [data-track='{"category":"widget_pirates_carousel"}'] .card-header {
+        background-color: #6A3460;
+    }
+    [data-track='{"category":"widget_pirates_carousel"}'] .card-header h3 {
+        color: white;
+        padding-bottom: 15px;
+    }
+    [data-track='{"category":"thread_action deal"}'] {
+        background-color: #03A5C1 !important;
+        border-bottom: 2px solid black !important;
+    }
+    [data-track='{"category":"thread_action deal"}'] {
+        background-color: black !important;
+        border-bottom: 2px solid black !important;
+        color: white;
+    }
+    [data-track='{"category":"thread_action deal"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}'] {
+        background-color: black;
+        border: 2px solid #017387 !important;
+        border-radius: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        box-shadow: 2px 2px #35373B;
+        color: #017387 !important;
+    }
+    [data-track='{"category":"thread_action deal"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover {
+        border: 2px solid white !important;
+        border-radius: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        box-shadow: 2px 2px #017387;
+        background-color: #017387 !important;
+        color: black !important;
+        text-decoration: none;
+    }
+    [data-track='{"category":"thread_action deal"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover svg {
+        color: black !important;
+    }
+    [data-track='{"category":"thread_action discussion"}'] {
+        background-color: black !important;
+        border-bottom: 2px solid #51A704 !important;
+        border-top: 1px solid #51A704;
+        color: white;
+    }
+    [data-track='{"category":"thread_action discussion"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}'] {
+        background-color: black;
+        border: 2px solid #4D970C !important;
+        border-radius: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        box-shadow: 2px 2px #35373B;
+        color: #4D970C !important;
+    }
+    [data-track='{"category":"thread_action discussion"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover {
+        border: 2px solid white !important;
+        border-radius: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        box-shadow: 2px 2px #4D970C;
+        background-color: #4D970C !important;
+        color: black !important;
+        text-decoration: none;
+    }
+    [data-track='{"category":"thread_action discussion"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover svg {
+        color: black !important;
+    }
+    [data-track='{"category":"widget_top_groups_carousel_horizontal"}'] {
+        background-color: transparent;
+    }
+    [data-track='{"category":"widget_top_groups_carousel_horizontal"}'] h3.card-title {
+        color: black;
+    }
+    .listingProfile {
+        background-color: #35373B;
+        color: #4D970C;
+    }
+    .listingProfile-footer h2 {
+        color: #017387;
+    }
+    .listLayout-sideItem {
+        background-color: transparent;
+        text-decoration: none;
+        border: 1px solid white;
+    }
+    .thread--discussion .threadGrid .threadGrid-headerMeta div div.flex span {
+        font-size: 0.85em;
+        color: #017387 !important;
+    }
+    /* Discussion récentes */
+    [data-track='{"category":"widget_user_activities"}'] .card-header .plainSelect,
+    [data-track='{"category":"widget_discussions_carousel_card"}'] .card-header h3 {
+        color: white;
+    }
+    [data-track='{"category":"widget_discussions_carousel_card"}'] .card-header {
+        background-color: #8AC457;
+    }
+    [data-track='{"category":"widget_discussions_carousel_card"}'] .carousel ol li div a.text--b {
+        color: #51A704;
+    }
+    [data-track='{"category":"widget_discussions_carousel_card"}'] .carousel ol li div div time span.hide--toW3 {
+        color: rgba(53, 55, 59, 0.5);
+    }
+    /* les hots ! */
+    .cept-hottest-widget-position-side .card-header {
+        background-color: #E00034;
+    }
+    .cept-hottest-widget-position-side .card-header .card-title,
+    .cept-hottest-widget-position-side .card-header .plainSelect,
+    .cept-hottest-widget-position-side .card-header .clickable span svg {
+        color: white;
+    }
+    /* deal hot similaires */
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header {
+        background-color: #E00034;
+    }
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-title,
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .plainSelect,
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .clickable span svg {
+        color: white;
+    }
+    /* Activités */
+    .cept-hottest-widget-position-side .card-header {
+        background-color: #E00034;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .card-header .card-title,
+    [data-track='{"category":"widget_user_activities"}'] .card-header .plainSelect,
+    [data-track='{"category":"widget_user_activities"}'] .card-header .clickable span svg {
+        color: white;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .card-header {
+        background-color: #8AC457;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .card-footer .icon--left,
+    [data-track='{"category":"widget_user_activities"}'] .card-footer .icon--right {
+        color: #8AC457;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .carousel {
+        padding-top: 30px;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .carousel ol li div p strong {
+        color: #51A704;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .carousel ol li a div p span.flex--width-calc-fix {
+        color: rgba(81, 167, 4, 0.5);
+    }
+    [data-track='{"category":"widget_user_activities"}'] .carousel ol li a div p span.flex svg {
+        color: rgba(81, 167, 4, 0.5);
+    }
+    .cept-top-group-widget .card-title {
+        color: white;
+        background-color: #03A5C1;
+    }
+    .icon--flame {
+        color: #E00034;
+    }
+    .icon--hourglass {
+        color: #f4b11f;
+    }
+    .icon--location {
+        color: #017387;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .cept-carousel-pages span.dot.bg--brandPrimary {
+        color: #8AC457;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .carousel .carousel-list-item a.card-itemSpace:hover .userHtml .text--color-greyShade span:nth-child(2) {
+        color: #51A704;
+    }
+    [data-track='{"category":"widget_user_activities"}'] .carousel .carousel-list-item a.card-itemSpace .userHtml .text--color-greyShade {
+        color: #51A704;
+        background-color: transparent;
+    }
+    [data-vue='{"jsonTemplate":"#data-widget-user-activity"}'] a {
+        color: white;
+    }
+    [data-vue='{"jsonTemplate":"#data-widget-user-activity"}'] a:hover {
+        font-weight: bold;
+        color: black;
+    }
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .previewList-itemV p.text--b {
+        color: white !important;
+        font-weight: normal !important;
+    }
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .previewList-itemV p.text--b strong {
+        font-weight: bold !important;
+    }
+    /* topic forum */
+    body.page article.thread--discussion article .threadItem {
+        background-color: #35373B;
+        border-top: 1px solid #4D970C;
+        border-left: 1px solid #4D970C;
+        border-right: 1px solid #4D970C;
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+    body.page article.thread--discussion .cept-thread-content {
+        background-color: #35373B;
+        border-left: 1px solid #4D970C;
+        border-right: 1px solid #4D970C;
+        color: white;
+    }
+    body.page .thread--discussion .thread-title--item {
+        color: #4D970C;
+    }
+    .thread--discussion .threadGrid .threadGrid-headerMeta div div a.linkPlain {
+        color: #4D970C;
+    }
+    [data-track='{"category":"item discussion"}'] .cept-thread-content div.border--color-borderGrey {
+        background-color: #4D970C !important;
+        border: 1px solid #8AC457 !important;
+        color: #4D970C !important;
+    }
+    #main .thread--discussion .cept-thread-content div:nth-child(1) div.border--color-borderGrey {
+        background-color: #c4f7ff;
+        border: 1px solid #017387;
+    }
+    #main .thread--discussion .cept-thread-content .thread-title--item {
+        color: white;
+    }
+    /* topic deal */
+    /*
+body.page article.thread--deal .cept-thread-main {
+    background-color: #f6feff;
+    border-top: 2px solid #017387;
+    border-left: 2px solid #017387;
+    border-right : 2px solid #017387;
+
+}
+
+body.page article.thread--deal .cept-thread-content {
+    background-color: #f6feff;
+    border-left: 2px solid #017387;
+    border-right : 2px solid #017387;
+}
+
+
+body.page .thread--deal .thread-title--item {
+    color: #017387;
+    
+}
+
+article.thread--deal .cept-thread-content div div.border--color-borderGrey {
+    background-color:#017387;
+
+}
+*/
+    /* Alternance couleur articles */
+    #main article[id^="thread_"] {
+        color: white;
+        background-color: black;
+        border-top: 1px solid #017387;
+    }
+    #main article[id^="thread_"]:nth-child(even) {
+        color: white;
+        background-color: #35373B;
+        border: 3px solid #017387;
+    }
+    /* Boite popup message menu */
+    #user-messages-dropdown #notifications-content-js .conversationList-msg a div span {
+        color: white;
+    }
+    #user-messages-dropdown #notifications-content-js .conversationList-msg {
+        background-color: black;
+        border-top: 1px solid #017387;
+    }
+    #user-messages-dropdown #notifications-content-js .conversationList-msg:nth-child(even) {
+        background-color: #35373B;
+    }
+    #user-messages-dropdown .navDropDown-footer {
+        background-color: #017387;
+    }
+    /* boite popup notifications menu */
+    #user-notifications-dropdown .notifications-content .notification-item a .notification-item-text {
+        color: white;
+    }
+    #user-notifications-dropdown .notifications-content .notification-item a .notification-item-text strong {
+        color: #03a5c1;
+    }
+    #user-notifications-dropdown .notifications-content .notification-item {
+        background-color: black;
+        border-top: 1px solid #017387;
+    }
+    #user-notifications-dropdown .notifications-content .notification-item:nth-child(even) {
+        background-color: #35373B;
+    }
+    #user-notifications-dropdown .navDropDown-footer {
+        background-color: #017387;
+    }
+    /* **** */
+    body.page #main .thread--deal .thread-link:visited,
+    body.page #main .thread--deal .thread-link {
+        color: white;
+    }
+    /* alternance couleur liste commentaires */
+    .redactor-editor {
+        background-color: black;
+        color: white;
+    }
+    /* top commentaires */
+    #comments {
+        background-color: #017387;
+    }
+    .comments-list--top {
+        background-color: #35373B;
+        background-image: url('https://image.ibb.co/nvWg8z/best_seller.png');
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 50px;
+        color: white;
+        margin-bottom: 20px;
+    }
+    /* fin top commentaires */
+    body.page #main .comments-list-item {
+        color: white;
+        background-color: black;
+        border-top: 1px solid #017387;
+    }
+    body.page #main .comments-list-item:nth-child(even) {
+        color: white;
+        background-color: #35373B;
+        border-top: 1px solid #017387;
+    }
+    article div div .comment-header .user span,
+    .thread-username,
+    .conversationList-senderLine {
+        color: #36B7CD !important;
+    }
+    .comment-body img {
+        -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        padding: 2px;
+        display: inline-block;
+        background: white;
+        border: 1px solid #017387;
+    }
+    article div div .comment-header .thread-user span.text--color-brandPrimary,
+    .threadItem-footerMeta .user .thread-username {
+        color: #E00034;
+    }
+    .comments-item-inner .comment-footer .cept-like-comment:hover span.text--color-greyShade {
+        color: #3b5998;
+        background-color: transparent;
+    }
+    .comments-item-inner .comment-footer[data-handler='popover track']:hover span.text--color-greyShade {
+        color: #551A8B;
+        background-color: transparent;
+    }
+    .comments-item-inner .comment-footer[data-handler='track quote-add']:hover span.text--color-greyShade {
+        color: #51A704;
+        background-color: transparent;
+    }
+    .comments-list article {
+        border-bottom: 1px solid #51A704;
+    }
+    article div div .comment-header time.text--color-greyShade {
+        color: #F4B326;
+    }
+    article div div .comment-body .mute--text {
+        color: #51A704;
+        font-size: 0.65em;
+        padding-top: 10px;
+    }
+    /* Bouton compteur de like  */
+    .cept-like-comment-count.text--color-greyShade:hover .lbox--v-1 {
+        color: #915fc6;
+    }
+    .cept-like-comment-count.text--color-greyShade .lbox--v-1 {
+        color: #aa83d3;
+    }
+    #comments #thread-comments .bg--inverted,
+    nav.comments-pagination.bg--greyPanel,
+    #pagination {
+        background-color: black;
+        color: black;
+    }
+    #comments .comments-list {
+        border: 0px solid #408202;
+    }
+    #comments .comments-list {
+        border: 0px solid #408202;
+    }
+    .comments-link--unread,
+    button.clickable {
+        color: white;
+    }
+    /* Ajout de commentaire footer */
+    [data-track='{"category":"comment_add_form"}'] #comment-form {
+        background-color: #017387;
+    }
+    [data-track='{"category":"comment_add_form"}'] div .text--b {
+        color: white;
+    }
+    [data-track='{"category":"comment_add_form"}'] .redactor-footer div label {
+        color: white;
+    }
+    [data-track='{"category":"comment_add_form"}'] .cept-comment-button:hover span {
+        background-color: white;
+        color: #51A704;
+    }
+    [data-track='{"category":"comment_add_form"}'] .cept-comment-button span {
+        background-color: #51A704;
+        color: white;
+    }
+    /* pagination commentaires */
+    .comments-pagination--header .tGrid .pagination-page.text--color-,
+    .comments-pagination--header .tGrid .cept-next-page:hover,
+    .comments-pagination--header .tGrid .cept-first-page:hover {
+        color: black;
+    }
+    .comments-pagination--header .tGrid[data-track='{"action":"goto_last_page","beacon":true}']:hover.cept-last-page,
+    a:hover.cept-last-page.pagination-page,
+    a:hover.cept-first-page.pagination-page {
+        color: black;
+    }
+    .comments-item-inner .comment-footer .comment-report:hover span.text--color-greyShade {
+        color: #E00034;
+        background-color: transparent;
+    }
+    /* spoilers */
+    .comment-body .userHtml-quote {
+        font-family: 'Caveat', Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.1em;
+    }
+    .userHtml-quote-author {
+        font-family: Roboto;
+    }
+    .userHtml-quote-content {
+        background-color: #017387 !important;
+        border: 1px dashed #36B7CD;
+        padding: 5px;
+    }
+    .userHtml-quote-content {
+        color: white !important;
+    }
+    /* PROFIL : Activité */
+    .tabbedInterface .tabbedInterface-tabs {
+        background-color: red;
+        color: white;
+    }
+    .tabbedInterface div.iGrid-item.box--fromW3-c.bg--main {
+        background-color: black;
+        color: white !important;
+    }
+    .tabbedInterface div.iGrid-item.box--fromW3-c.bg--main .formList-label,
+    .tabbedInterface h2.userProfile-title--sub {
+        color: #03a5c1;
+    }
+    #tab-activity .userProfile-action-item {
+        background-color: black;
+        border-top: 1px solid #51a704;
+        color: white;
+    }
+    #tab-activity .userProfile-action-item:nth-child(even) {
+        background-color: #35373B;
+    }
+    .tabbedInterface-tabs[href='#activity'] {
+        color: rgba(81, 167, 4, 1);
+    }
+    #tab-activity ul li a div div .userHtml strong,
+    #tab-activity ul li a div div .text--color-greyShade {
+        color: rgba(81, 167, 4, 1);
+    }
+    #tab-activity ul li a div div .text--color-greyShade .icon--comment,
+    #tab-activity ul li a div div .text--color-greyShade span {
+        color: rgba(81, 167, 4, 0.5);
+    }
+    [data-track='{"category":"pagination type:activity"}'] {
+        background-color: black;
+        color: white;
+    }
+    /* PROFIL : Badges */
+    #tab-badges ol li {
+        background-color: black;
+        border-top: 1px solid rgba(251, 199, 34, 1);
+        color: white;
+    }
+    #tab-badges ol li:nth-child(even) {
+        background-color: #35373B;
+    }
+    .tabbedInterface-tabs[href='#badges'] {
+        color: rgba(251, 199, 34, 1);
+    }
+    #tab-badges ol li div p.tGrid strong {
+        color: #017387;
+    }
+    /* PROFIL : Navigation gauche */
+    .page-content section ul li span .icon--thumb-up {
+        color: #3B5998;
+    }
+    /* PROFIL - profile/userName/discussions */
+    article .thread-fullMode .threadGrid-headerMeta div .flex span.lbox--v-4 {
+        color: rgba(81, 167, 4, 0.4);
+    }
+    article .thread-fullMode .threadGrid-title .thread-title {
+        color: #51A704;
+    }
+    /* PROFIL - Header */
+    .profileHeader .profileHeader-text.space--l-1.space--mr-3.overflow--wrap-off.size--all-s,
+    .profileHeader .icon--cake {
+        color: white;
+    }
+    /* dealabs.com/discussions-commentes */
+    article .thread-fullMode .threadGrid-headerMeta .flex div a.linkPlain,
+    [data-handler='popover track']:hover span {
+        color: #551A8B;
+    }
+    article .thread-fullMode .threadGrid-headerMeta .flex div a.linkPlain,
+    [data-handler='track quote-add']:hover span {
+        color: rgba(54, 183, 205, 1);
+    }
+    /* BOITE MESSAGES */
+    #main .cept-sendBtn {
+        background-color: rgba(1, 115, 135, 1);
+        color: white;
+        margin-right: 50px;
+    }
+    #main .cept-sendBtn:hover {
+        background-color: white;
+        color: rgba(1, 115, 135, 1);
+        border: 1px solid rgba(1, 115, 135, 1);
+    }
+    /* Discussion - Corps de message - Lien */
+    .cept-comment-container a.link {
+        color: #006df0 !important;
+        font-size: 0.9em;
+        font-weight: 400;
+        font-style: italic;
+        padding-bottom: 2px;
+        background-position: top left;
+        background-repeat: no-repeat;
+        padding-left: 16px;
+        background-image: url(https://image.ibb.co/hjKQw8/Link.png);
+        background-size: 14px 14px;
+        vertical-align: middle;
+    }
+    /* change couleur icones png en vert forum */
+    .listingProfile .js-topDiscussions img.imgFrame-img,
+    .listingProfile-info img.imgFrame-img {
+        filter: grayscale(0%) hue-rotate(278deg);
+        -webkit-filter: grayscale(0%) hue-rotate(278deg);
+    }
+    .thread--discussion {
+        color: white;
+        background-color: black;
+        border-top: 1px solid #017387;
+    }
+    .thread--discussion:nth-child(even) {
+        color: white;
+        background-color: #35373B;
+        border-top: 1px solid #017387;
+    }
+    /* messagerie */
+    .conversationMessages .cept-message {
+        background-color: black;
+        border-top: 1px solid #36B7CD;
+    }
+    .conversationMessages .cept-message p {
+        color: white;
+    }
+    .conversationMessages .cept-message:nth-child(even) {
+        background-color: #35373B;
+        border-top: 1px solid #36B7CD;
+    }
+    /* topic deal */
+    .cept-sale-event-thread {
+        background: none !important;
+    }
+    body.page article.thread--deal .cept-thread-main {
+        background-color: #35373B;
+        border-top: 1px solid #36B7CD;
+        border-left: 1px solid #36B7CD;
+        border-right: 1px solid #36B7CD;
+    }
+    body.page article.thread--deal .cept-thread-content {
+        background-color: #35373B;
+        border-left: 1px solid #36B7CD;
+        border-right: 1px solid #36B7CD;
+    }
+    body.page article.thread--deal .js-options {
+        background-color: #FFF;
+        border-top: 1px solid #36B7CD;
+        border-bottom: 1px solid
+    }
+    body.page .thread--deal .thread-title--item {
+        color: #017387;
+    }
+    article.thread--deal .cept-thread-content div div.border--color-borderGrey {
+        background-color: #017387;
+    }
+    [data-track='{"category":"item deal"}'] .thread-title span,
+    [data-track='{"action":"goto_thread title","beacon":true}'],
+    a[href^="https://www.dealabs.com/bons-plans/"],
+    [data-track='{"action":"goto_group","beacon":true}'] {
+        color: #36B7CD !important;
+    }
+    .cept-nav-subheadline {
+        color: #51a704;
+    }
+    .listingProfile-actions a.btn--mode-primary {
+        color: #f9fff4;
+        background-color: #51a704;
+    }
+    .listingProfile-actions a.btn--mode-primary:hover {
+        color: #51a704;
+        background-color: #f9fff4;
+        border: 1px solid #51a704;
+    }
+    /*
+#tour-filter div ul li a span,
+#tour-filter div ul li a.subNavMenu-link--selected {
+    color: #51a704;
+    font-weight: 700;
+    
+    
+}
+*/
+    .threadGrid-headerMeta div div a,
+    .threadGrid-headerMeta div div a:visited {
+        color: #02a5c1 !important;
+    }
+    /* dealabs.com/discussions */
+    .comment .comment-footer .cept-commentOptions-edit span:hover,
+    .cept-threadOptions-edit:hover {
+        color: rgba(242, 140, 31, 1);
+        background-color: transparent;
+    }
+    #main .thread--discussion .cept-thread-content div:nth-child(1) div.border--color-borderGrey {
+        background-color: black;
+        border: 1px solid #f9fff4;
+    }
+    .thread--discussion .threadGrid .threadGrid-headerMeta div div a.linkPlain {
+        color: black;
+    }
+    .cept-listing--list div.threadGrid-title a[href^="https://www.dealabs.com/discussions/"] {
+        color: #51A704 !important;
+    }
+    .threadGrid-footerMeta .cept-tb[href^="https://www.dealabs.com/discussions/"] {
+        background-color: #51a704;
+        border: 1px solid #f9fff4;
+        color: white;
+    }
+    .threadGrid-footerMeta .cept-tb[href^="https://www.dealabs.com/discussions/"]:hover {
+        background-color: white;
+        border: 1px solid #51a704;
+        color: #51a704;
+    }
+    .threadItem-ribbonIcoCell svg {
+        color: white !important;
+    }
+    .page-content .iGrid-item section.toggleSect.toggleSect--expanded.boxSec.bg--main {
+        background-color: #03A5C1;
+    }
+    [data-track='{"category":"user_profile_overview"}'] .iGrid .iGrid-item div.js-collapsableBox-content.boxSec-space.space--t-0 {
+        background-color: black !important;
+        color: white !important;
+    }
+    section.js-searchMsg {
+        background-color: black;
+        color: white;
+    }
+    input,
+    select,
+    .select-ctrl,
+    .input {
+        background-color: #000 !important;
+        color: white;
+        border: 1px solid #36b7cd !important;
+    }
+    /* profil paramètres */
+    .tabbedInterface {
+        background-color: black;
+    }
+    .tabbedInterface div.iGrid-item.box--fromW3-c.bg--main {
+        color: white !important;
+    }
+    .tabbedInterface div.iGrid-item.box--fromW3-c.bg--main .formList-label,
+    .tabbedInterface h2.userProfile-title--sub {
+        color: #03a5c1;
+    }
+    .tabbedInterface .tabbedInterface-tab--selected {
+        pointer-events: none;
+        background-color: black;
+        color: white;
+    }
+    .tabbedInterface-tab {
+        background-color: black;
+        color: white;
+    }
+    [data-track='{"action":"show_tab","label":"engagement type:badges"}'].tabbedInterface-tab--selected,
+    [data-track='{"action":"show_tab","label":"engagement type:activity"}'].tabbedInterface-tab--selected {
+        pointer-events: none;
+        background-color: #03a5c1 !important;
+        color: black !important;
+    }
+    .btn--disabled {
+        border: 1px solid #999999;
+        border-radius: 3px;
+        background-color: #cccccc;
+        color: #666666;
+    }
+    /* popup activité menu */
+    .js-layer.popover.popover--menu.popover--visible .popover-content.popover-content--expand {
+        background-color: #35373B;
+        color: #585B60;
+    }
+    .js-layer.popover.popover--menu.popover--visible .popover-content.popover-content--expand .navDropDown-tabContent a:hover,
+    .autoSuggest-suggestionsBox,
+    .page2-center div.bg--white,
+    #footer-description,
+    .cept-hottest-widget-position-top {
+        background-color: black;
+        color: white;
+    }
+}
