@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.1
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.11
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -24,9 +24,10 @@
  *
  *    Historique :
  *
- *      1.1 - 06/08/2017 :
+ *      1.11 - 06/08/2017 :
  *      ----------------------------------------
- *                             Objet : Mise en placve format mobile + corrections mineures
+ *                             Objet : Mise en place format mobile + corrections mineures
+ *
  *      1.03 - 06/08/2017 :
  *      ----------------------------------------
  *                             Objet : Corrections mineures
@@ -99,8 +100,22 @@
         padding-left: 20px;
     }
     /* DEALS */
-    .cept-dealBtn {
+    .footerMeta .iGrid-item .cept-dealBtn,
+    .footerMeta .iGrid-item .btn.btn--mode-boxSec {
         max-width: 200px;
+        background-color: #36B7CD;
+        color: white !important;
+        border: 1px solid white;
+    }
+    .footerMeta .iGrid-item .cept-dealBtn:hover,
+    .footerMeta .iGrid-item .btn.btn--mode-boxSec:hover {
+        background-color: white;
+        color: #36B7CD !important;
+        border: 1px solid white;
+    }
+    .btn.btn--mode-dark-inactive {
+        background-color: transparent !important;
+        border: 1px solid #B2B6BA !important;
     }
     .voucher {
         word-break: break-all;
