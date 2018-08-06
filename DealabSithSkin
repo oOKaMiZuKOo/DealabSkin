@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.032
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.03
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -21,6 +21,29 @@
  * 
  *    Bonne utilisation, j'espère que ce skin vous plaira (^.^) 
  *    ==========================================================================================
+ *
+ *    Historique :
+ *
+ *      1.03 - 06/08/2017 :
+ *      ----------------------------------------
+ *                             Objet : Corrections mineures
+ *                                      - correction alternance de couleurs de la liste des deals en page principale
+ *                                      - correction couleur boite popup de messages au onlick du menu (#user-messages-dropdown)
+ *                                      - correction couleur boite popup de notifications au onlick du menu (#user-notifications-dropdown)
+ *                                      - correction couleur profil boite activités
+ *                                      - correction couleur input, select
+ *                                      - hartmonisation couleurs tabbed des paramètres de profil utilisateur
+ *                                      - refonte du bouton désactivé (.btn--disabled)
+ *                                      - correction couleur popup activité au onlick du menu
+ *      1.02 - 06/08/2017 :
+ *      ----------------------------------------
+ *                             Objet : Suppression de zones claires pour mise en conformité avec thème sombre (à compléter ultérieurement)
+ *                                      - refonte box droites
+ *                                      - mise en avant top commentaire
+ *      1.0 - 02/08/2017 :
+ *      ----------------------------------------
+ *                             Objet : Adaptation de l'interface en version obscure (Sith version) (depuis DealabSweetSkin 1.0) 
+ *
  *
  * 
  * GLOSSAIRE Couleurs :
@@ -39,7 +62,8 @@
  @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
  @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-
+@media (max-device-width:3500px) {
+    
  body {
     font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size:100%;
@@ -111,7 +135,7 @@ header .nav-link span:hover, .navMenu-page.nav-link-text.vAlign--all-m.hide--toW
 }
 */
 
-.cept-navMenu-trigger span;
+.cept-navMenu-trigger span,
 .cept-navMenu-trigger svg {
 
     color:white;
@@ -125,7 +149,7 @@ header .nav-link span:hover, .navMenu-page.nav-link-text.vAlign--all-m.hide--toW
 
 article .threadGrid .threadGrid-body .sflex--dir-row-revere, article .threadGrid .threadGrid-body .width--fromW2-6, article .threadGrid .threadGrid-body .width--fromW2-6 .flex {
     width:unset;
-    display:inline;
+
 }
 article .threadGrid .threadGrid-body .width--fromW2-6 .voucher .border--dash input.width--all-12 {
     width:unset;
@@ -308,23 +332,6 @@ article.thread--deal .thread-image {
     padding-bottom:15px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [data-track='{"category":"thread_action deal"}'] {
     background-color: #03A5C1 !important;
     border-bottom: 2px solid black !important;
@@ -332,16 +339,10 @@ article.thread--deal .thread-image {
     
 }
 
-
-
-
-
-
 [data-track='{"category":"thread_action deal"}'] {
     background-color: black !important;
     border-bottom: 2px solid black !important;
     color:white;
-    
 }
 
 [data-track='{"category":"thread_action deal"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']
@@ -371,15 +372,6 @@ article.thread--deal .thread-image {
  {
     color:black !important;
 }
-
-
-
-
-
-
-
-
-
 
 [data-track='{"category":"thread_action discussion"}'] {
     background-color: black !important;
@@ -417,26 +409,6 @@ article.thread--deal .thread-image {
     color:black !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [data-track='{"category":"widget_top_groups_carousel_horizontal"}'] {
     background-color: transparent;
     
@@ -461,14 +433,11 @@ article.thread--deal .thread-image {
         border: 1px solid white;
 }
 
-
 .thread--discussion .threadGrid .threadGrid-headerMeta div div.flex span  {
     
     font-size:0.85em;
     color: #017387 !important;
-    
 }
-
 
 /* Discussion récentes */
 
@@ -502,8 +471,6 @@ article.thread--deal .thread-image {
 }
 [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-title, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .plainSelect, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .clickable span svg{
     color: white;
-
-    
 }
 
 /* Activités */
@@ -535,8 +502,6 @@ article.thread--deal .thread-image {
     color: rgba(81, 167, 4, 0.5);
 }
 
-
-
 .cept-top-group-widget .card-title {
     color: white;
     background-color:#03A5C1;
@@ -561,19 +526,14 @@ article.thread--deal .thread-image {
     background-color: transparent;
 }
 
-
 [data-vue='{"jsonTemplate":"#data-widget-user-activity"}'] a {
     color:white;
 }
-
 
 [data-vue='{"jsonTemplate":"#data-widget-user-activity"}'] a:hover {
     font-weight:bold;
     color:black;
 }
-
-
-
 
 [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .previewList-itemV p.text--b {
     color: white !important;
@@ -583,9 +543,6 @@ article.thread--deal .thread-image {
 [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .previewList-itemV p.text--b strong{
     font-weight: bold !important;
 }
-
-
-
 
 /* topic forum */
 body.page article.thread--discussion article .threadItem {
@@ -606,10 +563,8 @@ body.page article.thread--discussion .cept-thread-content {
     color:white;
 }
 
-
 body.page .thread--discussion .thread-title--item {
     color: #4D970C;
-    
 }
 
 .thread--discussion .threadGrid .threadGrid-headerMeta div div a.linkPlain {
@@ -623,9 +578,6 @@ body.page .thread--discussion .thread-title--item {
     color:#4D970C !important;
 }
 
-
-
-
 #main .thread--discussion .cept-thread-content div:nth-child(1) div.border--color-borderGrey {
     background-color : #c4f7ff;
     border:1px solid #017387;
@@ -635,7 +587,6 @@ body.page .thread--discussion .thread-title--item {
 #main .thread--discussion .cept-thread-content .thread-title--item {
     color:white ;
 }
-
 
 /* topic deal */
 /*
@@ -680,10 +631,7 @@ article.thread--deal .cept-thread-content div div.border--color-borderGrey {
     color:white;
     background-color:#35373B;
     border:3px solid #017387;
-    
 }
-
-
 
 /* Boite popup message menu */
 
@@ -727,13 +675,7 @@ article.thread--deal .cept-thread-content div div.border--color-borderGrey {
     background-color:#017387;
 }
 
-
-
-
 /* **** */
-
-
-
 
 body.page #main .thread--deal .thread-link:visited,
 body.page #main .thread--deal .thread-link{
@@ -927,17 +869,6 @@ nav.comments-pagination.bg--greyPanel,
    color: #03a5c1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 #tab-activity .userProfile-action-item {
     background-color : black;
     border-top:1px solid #51a704;
@@ -1046,18 +977,6 @@ filter: grayscale(0%) hue-rotate(278deg);
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .thread--discussion  {
 
     color:white;
@@ -1140,14 +1059,6 @@ a[href^="https://www.dealabs.com/bons-plans/"],
     color: #36B7CD !important;
 }
 
-
-
-
-
-
-
-
-
 .cept-nav-subheadline {
     color:#51a704;
 }
@@ -1172,19 +1083,12 @@ a[href^="https://www.dealabs.com/bons-plans/"],
 }
 */
 
-
 .threadGrid-headerMeta div div a,
 .threadGrid-headerMeta div div a:visited {
     color: #02a5c1 !important;
 }
 
-
-
-
-
 /* dealabs.com/discussions */
-
-
 
 .comment .comment-footer .cept-commentOptions-edit span:hover, .cept-threadOptions-edit:hover {
     color: rgba(242, 140, 31, 1);
@@ -1221,11 +1125,6 @@ a[href^="https://www.dealabs.com/bons-plans/"],
     color:white !important;
 }
 
-
-
-
-
-
 .page-content .iGrid-item section.toggleSect.toggleSect--expanded.boxSec.bg--main {
     background-color:#03A5C1;
 }
@@ -1235,22 +1134,16 @@ a[href^="https://www.dealabs.com/bons-plans/"],
     color:white !important;
 }
 
-
-
-
 section.js-searchMsg {
     background-color:black;
     color:white;
 }
-
 
 input, select, .select-ctrl, .input {
     background-color: #000 !important;
     color:white;
     border: 1px solid #36b7cd !important;
 }
-
-
 
 /* profil paramètres */
 
@@ -1266,7 +1159,6 @@ input, select, .select-ctrl, .input {
 .tabbedInterface h2.userProfile-title--sub {
    color: #03a5c1;
 }
-
 
 .tabbedInterface .tabbedInterface-tab--selected {
     pointer-events: none;
@@ -1286,16 +1178,12 @@ input, select, .select-ctrl, .input {
     color: black !important;
 }
 
-
-
-
 .btn--disabled {
   border: 1px solid #999999;
     border-radius : 3px;
   background-color: #cccccc;
   color: #666666;
 }
-
 
 /* popup activité menu */
 
@@ -1304,11 +1192,16 @@ input, select, .select-ctrl, .input {
     color:#585B60;
 }
 
-
 .js-layer.popover.popover--menu.popover--visible .popover-content.popover-content--expand .navDropDown-tabContent a:hover,
 .autoSuggest-suggestionsBox,
 .page2-center div.bg--white,
-footer-description {
+#footer-description {
     background-color:black;
     color:white;
+}
+
+
+
+
+
 }
