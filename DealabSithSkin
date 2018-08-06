@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.0
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.02
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -21,25 +21,8 @@
  * 
  *    Bonne utilisation, j'espère que ce skin vous plaira (^.^) 
  *    ==========================================================================================
- *
- *    Historique :
- *
- *      1.0 - 02/08/2017 :
- *      ----------------------------------------
- *                             Objet : Adaptation de l'interface en version obscure (Sith version) (depuis DealabSweetSkin 1.0) 
- *
- *
- * 
- * GLOSSAIRE Couleurs :
- * ====================
- * 	Rouge foncé	: rgba(224, 0, 52,1)
- * 	Bleu foncé 	: rgba(1, 115, 135,1)
- * 	Bleu Clair 	: rgba(54, 183, 205,1)
- * 	Vert foncé 	: rgba(81, 167, 4,1)
- * 	Vert Clair 	: 
- *	Jaune orangé: rgba(251, 199, 34,1)
- *  Orange 		: rgba(242, 140, 31,1);
 */
+
  @charset"UTF-8";
  @import url('https://fonts.googleapis.com/css?family=Roboto');
  @import url('https://fonts.googleapis.com/css?family=Caveat');
@@ -105,6 +88,18 @@ header .nav-link span {
 header .nav-link span:hover, .navMenu-page.nav-link-text.vAlign--all-m.hide--toW3  {
     color: #02A5C1;
 }
+
+
+.subNav {
+    background-color:black;
+    border-top:2px dashed #017387;
+}
+
+/*
+.listingProfile-footer {
+    border-top:2px dashed #51A704 !important;
+}
+*/
 
 .cept-navMenu-trigger span;
 .cept-navMenu-trigger svg {
@@ -300,10 +295,172 @@ article.thread--deal .thread-image {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-track='{"category":"thread_action deal"}'] {
+    background-color: #03A5C1 !important;
+    border-bottom: 2px solid black !important;
+    
+    
+}
+
+
+
+
+
+
+[data-track='{"category":"thread_action deal"}'] {
+    background-color: black !important;
+    border-bottom: 2px solid black !important;
+    color:white;
+    
+}
+
+[data-track='{"category":"thread_action deal"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']
+ {
+    background-color: black; 
+    border: 2px solid #017387 !important;
+    border-radius:3px;
+    padding-left:8px;
+    padding-right:8px;
+    box-shadow: 2px 2px #35373B;
+    color: #017387 !important;
+}
+
+[data-track='{"category":"thread_action deal"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover
+ {
+    border: 2px solid white !important;
+    border-radius:3px;
+    padding-left:8px;
+    padding-right:8px;
+    box-shadow: 2px 2px #017387;
+    background-color: #017387 !important;
+    color:black !important;
+    text-decoration:none; 
+}
+
+[data-track='{"category":"thread_action deal"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover svg
+ {
+    color:black !important;
+}
+
+
+
+
+
+
+
+
+
+
+[data-track='{"category":"thread_action discussion"}'] {
+    background-color: black !important;
+    border-bottom: 2px solid #51A704 !important;
+    border-top:1px solid #51A704;
+    color:white;
+    
+}
+
+[data-track='{"category":"thread_action discussion"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']
+ {
+    background-color: black; 
+    border: 2px solid #4D970C !important;
+    border-radius:3px;
+    padding-left:8px;
+    padding-right:8px;
+    box-shadow: 2px 2px #35373B;
+    color: #4D970C !important;
+}
+
+[data-track='{"category":"thread_action discussion"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover
+ {
+    border: 2px solid white !important;
+    border-radius:3px;
+    padding-left:8px;
+    padding-right:8px;
+    box-shadow: 2px 2px #4D970C;
+    background-color: #4D970C !important;
+    color:black !important;
+    text-decoration:none; 
+}
+
+[data-track='{"category":"thread_action discussion"}'] [data-track='{"action":"scroll_to_comment_add_form","label":"engagement"}']:hover svg
+ {
+    color:black !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-track='{"category":"widget_top_groups_carousel_horizontal"}'] {
+    background-color: transparent;
+    
+}
+
+[data-track='{"category":"widget_top_groups_carousel_horizontal"}'] h3.card-title {
+    color:black;
+}
+
+.listingProfile {
+    background-color:#35373B;
+    color: #4D970C;
+}
+
+.listingProfile-footer h2 {
+    color: #017387;    
+}
+
+.listLayout-sideItem {
+        background-color: transparent;
+        text-decoration: none;
+        border: 1px solid white;
+}
+
+
+.thread--discussion .threadGrid .threadGrid-headerMeta div div.flex span  {
+    
+    font-size:0.85em;
+    color: #017387 !important;
+    
+}
+
+
 /* Discussion récentes */
 
 [data-track='{"category":"widget_user_activities"}'] .card-header .plainSelect, [data-track='{"category":"widget_discussions_carousel_card"}'] .card-header h3 {
     color: white;
+
 }
 [data-track='{"category":"widget_discussions_carousel_card"}'] .card-header  {
     background-color:#8AC457;
@@ -329,8 +486,10 @@ article.thread--deal .thread-image {
 [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header {
     background-color: #E00034;
 }
-[data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-title, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .plainSelect, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .clickable span svg {
+[data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-title, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .plainSelect, [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-header .clickable span svg{
     color: white;
+
+    
 }
 
 /* Activités */
@@ -389,6 +548,30 @@ article.thread--deal .thread-image {
 }
 
 
+[data-vue='{"jsonTemplate":"#data-widget-user-activity"}'] a {
+    color:white;
+}
+
+
+[data-vue='{"jsonTemplate":"#data-widget-user-activity"}'] a:hover {
+    font-weight:bold;
+    color:black;
+}
+
+
+
+
+[data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .previewList-itemV p.text--b {
+    color: white !important;
+    font-weight: normal !important;
+}
+
+[data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .previewList-itemV p.text--b strong{
+    font-weight: bold !important;
+}
+
+
+
 
 /* topic forum */
 body.page article.thread--discussion article .threadItem {
@@ -409,12 +592,6 @@ body.page article.thread--discussion .cept-thread-content {
     color:white;
 }
 
-body.page article.thread--discussion .js-options {
-    background-color: white;
-    border-top: 1px solid #4D970C;
-    border-bottom: 1px solid #4D970C;
-    color:#4D970C;
-}
 
 body.page .thread--discussion .thread-title--item {
     color: #4D970C;
@@ -462,12 +639,6 @@ body.page article.thread--deal .cept-thread-content {
     border-right : 2px solid #017387;
 }
 
-body.page article.thread--deal .js-options {
-    background-color: #FFF;
-   
-    border-top: 1px solid #017387;
-    border-bottom: 1px solid 
-}
 
 body.page .thread--deal .thread-title--item {
     color: #017387;
@@ -506,6 +677,25 @@ body.page #main .thread--deal .thread-link{
 /* alternance couleur liste commentaires */
 
 
+/* top commentaires */
+
+#comments {
+    background-color:#017387;    
+}
+
+.comments-list--top {
+    background-color: #35373B;
+    background-image:url('https://image.ibb.co/nvWg8z/best_seller.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 50px;
+    color:white;
+    margin-bottom: 20px;
+}
+
+
+/* fin top commentaires */
 
 
 body.page #main .comments-list-item {
@@ -527,12 +717,12 @@ body.page #main .comments-list-item:nth-child(even)   {
 
 article div div .comment-header .user span,
 .thread-username {
-    color: #017387;
+    color: #36B7CD;
 }
 
 article div div .comment-header .user span,
 .thread-username {
-    color: #017387;
+    color: #36B7CD;
 }
 
 
@@ -587,17 +777,23 @@ article div div .comment-body .mute--text {
 }
 
 
-#comments #thread-comments .bg--inverted, nav.comments-pagination.bg--greyPanel {
-    background-color:#51A704;
+#comments #thread-comments .bg--inverted, 
+nav.comments-pagination.bg--greyPanel,
+#pagination {
+    background-color:black;
     color:black;
 }
+
+
+
+
 #comments .comments-list {
     border: 0px solid #408202;
 }
 #comments .comments-list {
     border: 0px solid #408202;
 }
-.comments-link--unread {
+.comments-link--unread, button.clickable {
     color:white;
 }
 /* Ajout de commentaire footer */
