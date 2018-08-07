@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v2.0
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v2.01
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -34,7 +34,7 @@
  *                                          > ATTENTION : 
  *                                            Suivre la procédure sous stylus suivante pour fonctionnement :
  *                                               -----> Sous Stylus :
- *                                                        1. Ajouter une section
+ *                                                        1. Cliquer sur "Préciser"
  *                                                        2. Choix "URL sur le domaine"
  *                                                        3. Saisir "www.dealabs.com"
  *
@@ -62,16 +62,36 @@
     }
     .tGrid-row.height--all-full {
         background-color: #017387;
-        padding-right:5px;
     }
     .height--all-full
     {
-        padding-right:5px !important;
-        padding-left:5px !important;
+        padding-right:0px !important;
+        padding-left:0px !important;
         padding-bottom:15px !important;
         margin-left:0px !important;
         background-color: #017387;
     }
+    
+
+    
+    .js-threadList {
+        padding:0px !important;
+        margin:0px !important;
+    }
+    
+    article {
+        padding-left:0px !important;
+        margin-left:5px !important;
+        margin-right:5px !important;
+        
+         
+    }
+    
+    
+    #main button.metaRibbon-btn .text--color-black {color:white !important;}
+    
+    .thread-title a[data-track='{"action":"goto_thread title","beacon":true}']::after {background:none;}
+    
     
     [data-track='{"action":"goto_banner_target","beacon":true}'] {background-color:transparent;}
     
@@ -190,13 +210,7 @@
     .voucher .width--all-6 {
         width: unset;
     }
-    /*
-article.thread--deal:nth-child(even) {
-    background-color : #f7fdff;
-    border-top:1px solid #36B7CD;
-}
 
-*/
     article.thread--deal .thread-image {
         border-radius: 6px;
     }
@@ -628,12 +642,12 @@ article.thread--deal:nth-child(even) {
     #main article[id^="thread_"] {
         color: white;
         background-color: black;
-        border-top: 1px solid #017387;
+        border: 1px solid #35373B;
     }
     #main article[id^="thread_"]:nth-child(even) {
         color: white;
         background-color: #35373B;
-        border: 3px solid #017387;
+        border: 1px solid black;
     }
     /* Boite popup message menu */
     #user-messages-dropdown #notifications-content-js .conversationList-msg a div span {
