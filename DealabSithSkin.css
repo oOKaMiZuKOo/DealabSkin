@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v1.11
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v2.0
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -24,30 +24,19 @@
  *
  *    Historique :
  *
- *      1.11 - 06/08/2017 :
+ *      2.00 - 07/08/2017 :
  *      ----------------------------------------
- *                             Objet : Mise en place format mobile + corrections mineures
- *
- *      1.03 - 06/08/2017 :
- *      ----------------------------------------
- *                             Objet : Corrections mineures
- *                                      - correction alternance de couleurs de la liste des deals en page principale
- *                                      - correction couleur boite popup de messages au onlick du menu (#user-messages-dropdown)
- *                                      - correction couleur boite popup de notifications au onlick du menu (#user-notifications-dropdown)
- *                                      - correction couleur profil boite activités
- *                                      - correction couleur input, select
- *                                      - hartmonisation couleurs tabbed des paramètres de profil utilisateur
- *                                      - refonte du bouton désactivé (.btn--disabled)
+ *                             Objet : Adaptation pour le format mobile (ex : Android)
+ *                                      - correction des bordures (width) pour adaptation au format mobile (réduit)
  *                                      - correction couleur popup activité au onlick du menu
- *      1.02 - 06/08/2017 :
- *      ----------------------------------------
- *                             Objet : Suppression de zones claires pour mise en conformité avec thème sombre (à compléter ultérieurement)
- *                                      - refonte box droites
- *                                      - mise en avant top commentaire
- *      1.0 - 02/08/2017 :
- *      ----------------------------------------
- *                             Objet : Adaptation de l'interface en version obscure (Sith version) (depuis DealabSweetSkin 1.0) 
- *
+ *                                      - correction couleur fenêtres promotionnelles côté droit
+ *                                      - test de fonctionnement OK sur téléphone mobile android
+ *                                          > ATTENTION : 
+ *                                            Suivre la procédure sous stylus suivante pour fonctionnement :
+ *                                               -----> Sous Stylus :
+ *                                                        1. Ajouter une section
+ *                                                        2. Choix "URL sur le domaine"
+ *                                                        3. Saisir "www.dealabs.com"
  *
  * 
  * GLOSSAIRE Couleurs :
@@ -65,14 +54,44 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@media (max-device-width: 3500px) {
+@media screen and (min-width: 1px) {
     body {
         font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
         font-size: 100%;
+        
     }
     .tGrid-row.height--all-full {
         background-color: #017387;
+        padding-right:5px;
     }
+    .height--all-full
+    {
+        padding-right:5px !important;
+        padding-left:5px !important;
+        padding-bottom:15px !important;
+        margin-left:0px !important;
+        background-color: #017387;
+    }
+    
+    [data-track='{"action":"goto_banner_target","beacon":true}'] {background-color:transparent;}
+    
+    .text--overlay::before {background:none;}
+    .text--overlay {background:none;}
+    fromW3-fade-b-r--l::after, .thread-title--list--merchant::after, .thread-title--list::after {
+        background-color:transparent;
+    }
+    
+    .cept-vc.voucher {
+        
+        vertical-align:middle !important;
+        height:60px;
+    }
+    
+    .cept-vc.voucher input {
+        border:0px !important;
+    }
+    
+    
     h1,
     h2,
     h3 {
@@ -398,7 +417,7 @@ article.thread--deal:nth-child(even) {
         color: white;
     }
     [data-track='{"category":"widget_discussions_carousel_card"}'] .card-header {
-        background-color: #8AC457;
+        background-color: #51A704;
     }
     [data-track='{"category":"widget_discussions_carousel_card"}'] .carousel ol li div a.text--b {
         color: #51A704;
@@ -407,8 +426,89 @@ article.thread--deal:nth-child(even) {
         color: rgba(53, 55, 59, 0.5);
     }
     /* les hots ! */
+    
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'],
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-inner,
+    [data-track='{"category":"widget_user_activities"}'],
+    [data-track='{"category":"widget_user_activities"}'] .card-inner,
+    [data-track='{"category":"widget_discussions_carousel_card"}'],
+    [data-track='{"category":"widget_discussions_carousel_card"}'] .card-inner,
+    [data-track='{"category":"widget_top_groups_carousel_card"}'],
+    [data-track='{"category":"widget_top_groups_carousel_card"}'] .card-inner,
+    [data-track='{"category":"widget_merchants_thumbnail"}'],
+    [data-track='{"category":"widget_merchants_thumbnail"}'] .card-inner,
+    [data-track='{"category":"widget_pirates_carousel"}'],
+    [data-track='{"category":"widget_pirates_carousel"}'] .card-inner {
+        background-color: black;
+    }
+    
+    [data-track='{"category":"widget_top_groups_carousel_card"}'] ol li a div div span,
+    [data-track='{"category":"widget_pirates_carousel"}'] .carousel-list-item
+    {
+        color:white;
+    }
+    
+    [data-track='{"category":"widget_top_groups_carousel_card"}'] ol li a div div span.text--b {
+        color:#03A5C1;
+    }
+    
+    [data-track='{"category":"widget_pirates_carousel"}'] .carousel-list-item .text--b {
+        color:#934b85;
+    }
+    
+    
+    [data-track='{"category":"widget_pirates_carousel"}'] .text--overlay.text--b {
+        color:#E00034;
+        background-color:black;
+    }
+    
+    
+    
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .cept-carousel-pages,
+    [data-track='{"category":"widget_user_activities"}'] .cept-carousel-pages,
+    [data-track='{"category":"widget_merchants_thumbnail"}'] .cept-carousel-pages
+    [data-track='{"category":"widget_pirates_carousel"}'] .cept-carousel-pages
+    {
+        background-color:black !important;
+    }
+    
+    [data-track='{"category":"widget_pirates_carousel"}'] .cept-carousel-next.clickable span svg,
+    [data-track='{"category":"widget_pirates_carousel"}'] [data-track='{"action":"show_previous_page","label":"engagement"}'].clickable span svg
+    {
+        color:#6A3460 !important;
+    }
+    
+    [data-track='{"category":"widget_pirates_carousel"}'] .cept-carousel-pages .dot.bg--brandPrimary {
+        background-color:#6A3460;
+    }
+    
+    [data-track='{"category":"widget_merchants_thumbnail"}'] .cept-carousel-next.clickable span svg,
+    [data-track='{"category":"widget_merchants_thumbnail"}'] [data-track='{"action":"show_previous_page","label":"engagement"}'].clickable span svg
+    {
+        color: #EAAD5D !important;
+    }
+    
+    [data-track='{"category":"widget_merchants_thumbnail"}'] .cept-carousel-pages .dot.bg--brandPrimary {
+        background-color:#EAAD5D !important;
+    }
+    
+    
+    [data-track='{"category":"widget_user_activities"}'] li .dot.bg--brandPrimary,
+    [data-track='{"category":"widget_discussions_carousel_card"}'] li .dot.bg--brandPrimary {
+        background-color:#51A704 !important;
+    }
+    [data-track='{"category":"widget_discussions_carousel_card"}'] .cept-carousel-next.clickable span svg,
+    [data-track='{"category":"widget_discussions_carousel_card"}'] [data-track='{"action":"show_previous_page","label":"engagement"}'].clickable span svg
+    {
+        color:#51A704 !important;
+    }
+    
+    
+    
+    [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .card-inner .text--overlay {background-color:black; padding:4px;}
+    
     .cept-hottest-widget-position-side .card-header {
-        background-color: #E00034;
+        background-color: black;
     }
     .cept-hottest-widget-position-side .card-header .card-title,
     .cept-hottest-widget-position-side .card-header .plainSelect,
@@ -434,17 +534,17 @@ article.thread--deal:nth-child(even) {
         color: white;
     }
     [data-track='{"category":"widget_user_activities"}'] .card-header {
-        background-color: #8AC457;
+        background-color: #51A704;
     }
     [data-track='{"category":"widget_user_activities"}'] .card-footer .icon--left,
     [data-track='{"category":"widget_user_activities"}'] .card-footer .icon--right {
-        color: #8AC457;
+        color: #51A704;
     }
     [data-track='{"category":"widget_user_activities"}'] .carousel {
         padding-top: 30px;
     }
     [data-track='{"category":"widget_user_activities"}'] .carousel ol li div p strong {
-        color: #51A704;
+        color:  #51A704;
     }
     [data-track='{"category":"widget_user_activities"}'] .carousel ol li a div p span.flex--width-calc-fix {
         color: rgba(81, 167, 4, 0.5);
@@ -466,10 +566,10 @@ article.thread--deal:nth-child(even) {
         color: #017387;
     }
     [data-track='{"category":"widget_user_activities"}'] .cept-carousel-pages span.dot.bg--brandPrimary {
-        color: #8AC457;
+        color:  #51A704;
     }
     [data-track='{"category":"widget_user_activities"}'] .carousel .carousel-list-item a.card-itemSpace:hover .userHtml .text--color-greyShade span:nth-child(2) {
-        color: #51A704;
+        color:  #51A704;
     }
     [data-track='{"category":"widget_user_activities"}'] .carousel .carousel-list-item a.card-itemSpace .userHtml .text--color-greyShade {
         color: #51A704;
@@ -480,7 +580,7 @@ article.thread--deal:nth-child(even) {
     }
     [data-vue='{"jsonTemplate":"#data-widget-user-activity"}'] a:hover {
         font-weight: bold;
-        color: black;
+        
     }
     [data-vue='{"jsonTemplate":"#data-hottest-widget"}'] .previewList-itemV p.text--b {
         color: white !important;
@@ -513,7 +613,7 @@ article.thread--deal:nth-child(even) {
     }
     [data-track='{"category":"item discussion"}'] .cept-thread-content div.border--color-borderGrey {
         background-color: #4D970C !important;
-        border: 1px solid #8AC457 !important;
+        border: 1px solid #51A704 !important;
         color: #4D970C !important;
     }
     #main .thread--discussion .cept-thread-content div:nth-child(1) div.border--color-borderGrey {
@@ -523,33 +623,7 @@ article.thread--deal:nth-child(even) {
     #main .thread--discussion .cept-thread-content .thread-title--item {
         color: white;
     }
-    /* topic deal */
-    /*
-body.page article.thread--deal .cept-thread-main {
-    background-color: #f6feff;
-    border-top: 2px solid #017387;
-    border-left: 2px solid #017387;
-    border-right : 2px solid #017387;
 
-}
-
-body.page article.thread--deal .cept-thread-content {
-    background-color: #f6feff;
-    border-left: 2px solid #017387;
-    border-right : 2px solid #017387;
-}
-
-
-body.page .thread--deal .thread-title--item {
-    color: #017387;
-    
-}
-
-article.thread--deal .cept-thread-content div div.border--color-borderGrey {
-    background-color:#017387;
-
-}
-*/
     /* Alternance couleur articles */
     #main article[id^="thread_"] {
         color: white;
@@ -1015,7 +1089,8 @@ article.thread--deal .cept-thread-content div div.border--color-borderGrey {
     .autoSuggest-suggestionsBox,
     .page2-center div.bg--white,
     #footer-description,
-    .cept-hottest-widget-position-top {
+    .cept-hottest-widget-position-top,
+    [data-track='{"category":"widget_discussions_carousel_horizontal"}'] {
         background-color: black;
         color: white;
     }
