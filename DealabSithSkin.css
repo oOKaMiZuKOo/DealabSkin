@@ -11,7 +11,7 @@
  *                        par oOKaMiZuKOo - https://www.dealabs.com/28642/oOKaMiZuKOo                             
  *                                                                 
  *                                                                                         
- *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v2.02
+ *    Dernière MAJ : 02/08/2018 - [Theme du site Dealabs] DealabSithSkin v2.03
  *    
  *    Topic de suivi (et MAJ) sur : https://www.dealabs.com/
  *
@@ -456,6 +456,10 @@
         background-color: black;
     }
     
+    
+
+    
+    
     [data-track='{"category":"widget_top_groups_carousel_card"}'] ol li a div div span,
     [data-track='{"category":"widget_pirates_carousel"}'] .carousel-list-item
     {
@@ -483,7 +487,7 @@
     [data-track='{"category":"widget_merchants_thumbnail"}'] .cept-carousel-pages
     [data-track='{"category":"widget_pirates_carousel"}'] .cept-carousel-pages
     {
-        background-color:black !important;
+        background-color:black;
     }
     
     [data-track='{"category":"widget_pirates_carousel"}'] .cept-carousel-next.clickable span svg,
@@ -579,6 +583,16 @@
     .icon--location {
         color: #017387;
     }
+/*    
+    [data-track='{"category": "widget_hottest_deals_top"}'] .cept-carousel-pages .dot.bg--red {
+        color: black;
+    }
+    
+    [data-track='{"category": "widget_hottest_deals_top"}'] .cept-carousel-pages {
+        background-color:red;
+    }
+*/
+    
     [data-track='{"category":"widget_user_activities"}'] .cept-carousel-pages span.dot.bg--brandPrimary {
         color:  #51A704;
     }
@@ -967,6 +981,19 @@
         border-left: 1px solid #36B7CD;
         border-right: 1px solid #36B7CD;
     }
+    
+    [data-track='{"category":"item deal"}'],
+    [data-track='{"category":"item discussion"}'] {
+        
+        border:0px !important;
+    }
+    
+    article[id^="thread_"] {
+        margin-left:0 !important;
+        margin-right:0 !important;
+        width:100%;
+    }
+    
     body.page article.thread--deal .cept-thread-content {
         background-color: #35373B;
         border-left: 1px solid #36B7CD;
@@ -1108,4 +1135,5 @@
         background-color: black;
         color: white;
     }
+    
 }
